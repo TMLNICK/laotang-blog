@@ -1,0 +1,11 @@
+#配置thymeleaf对html的解析以及指定环境为开发环境
+spring:
+  thymeleaf:
+    mode: HTML
+  profiles:
+    active: dev
+
+
+comment.avatar: /images/default.jpg
+user.avatar: /images/huge.jpg
+message.avatar: /images/default.jpg

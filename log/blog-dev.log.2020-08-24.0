@@ -1,0 +1,1117 @@
+2020-08-24 09:05:23.040  INFO 23384 --- [restartedMain] com.personblog.PersonBlogApplication     : Starting PersonBlogApplication on DESKTOP-G613JOF with PID 23384 (E:\PersonBlog\target\classes started by 汤老 in E:\PersonBlog)
+2020-08-24 09:05:23.044 DEBUG 23384 --- [restartedMain] com.personblog.PersonBlogApplication     : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-08-24 09:05:23.045  INFO 23384 --- [restartedMain] com.personblog.PersonBlogApplication     : The following profiles are active: dev
+2020-08-24 09:05:23.098  INFO 23384 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-24 09:05:23.098  INFO 23384 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-24 09:05:24.628  INFO 23384 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-24 09:05:24.637  INFO 23384 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-24 09:05:24.637  INFO 23384 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-08-24 09:05:24.734  INFO 23384 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-24 09:05:24.734  INFO 23384 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1635 ms
+2020-08-24 09:05:25.405  INFO 23384 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-24 09:05:25.492  INFO 23384 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-08-24 09:05:25.830  INFO 23384 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-08-24 09:05:25.874  INFO 23384 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-24 09:05:25.884  INFO 23384 --- [restartedMain] com.personblog.PersonBlogApplication     : Started PersonBlogApplication in 3.616 seconds (JVM running for 5.096)
+2020-08-24 09:05:55.302  INFO 23384 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-24 09:05:55.303  INFO 23384 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-24 09:05:55.310  INFO 23384 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-08-24 09:06:13.429  INFO 23384 --- [http-nio-8080-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-24 09:06:13.663  INFO 23384 --- [http-nio-8080-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-24 09:06:13.672 DEBUG 23384 --- [http-nio-8080-exec-9] com.personblog.dao.UserMapper.login      : ==>  Preparing: select username, password from t_user where username=? and password=?;
+2020-08-24 09:06:13.701 DEBUG 23384 --- [http-nio-8080-exec-9] com.personblog.dao.UserMapper.login      : ==> Parameters: tml(String), 123(String)
+2020-08-24 09:06:13.739 DEBUG 23384 --- [http-nio-8080-exec-9] com.personblog.dao.UserMapper.login      : <==      Total: 1
+2020-08-24 09:06:16.511 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllType_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type
+2020-08-24 09:06:16.511 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllType_COUNT   : ==> Parameters: 
+2020-08-24 09:06:16.526 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllType_COUNT   : <==      Total: 1
+2020-08-24 09:06:16.529 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: SELECT id, name FROM t_type order by id desc LIMIT ?
+2020-08-24 09:06:16.530 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 5(Integer)
+2020-08-24 09:06:16.531 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllType         : <==      Total: 5
+2020-08-24 09:06:20.881 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-08-24 09:06:20.881 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==> Parameters: 
+2020-08-24 09:06:20.896 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : <==      Total: 1
+2020-08-24 09:06:20.898 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getAllBlogQuery       : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-08-24 09:06:20.898 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getAllBlogQuery       : ==> Parameters: 5(Integer)
+2020-08-24 09:06:20.911 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getAllBlogQuery       : <==      Total: 5
+2020-08-24 09:06:20.913 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: select id, name from t_type
+2020-08-24 09:06:20.914 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 
+2020-08-24 09:06:20.917 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllType         : <==      Total: 9
+2020-08-24 09:06:22.705 DEBUG 23384 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type
+2020-08-24 09:06:22.705 DEBUG 23384 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType_COUNT   : ==> Parameters: 
+2020-08-24 09:06:22.706 DEBUG 23384 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType_COUNT   : <==      Total: 1
+2020-08-24 09:06:22.707 DEBUG 23384 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: SELECT id, name FROM t_type order by id desc LIMIT ?
+2020-08-24 09:06:22.707 DEBUG 23384 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 5(Integer)
+2020-08-24 09:06:22.708 DEBUG 23384 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType         : <==      Total: 5
+2020-08-24 09:41:44.065  INFO 23384 --- [Thread-183] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-24 09:41:44.080  INFO 23384 --- [Thread-183] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-08-24 09:41:44.097  INFO 23384 --- [Thread-183] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-08-24 09:41:44.615  INFO 23384 --- [restartedMain] com.personblog.PersonBlogApplication     : Starting PersonBlogApplication on DESKTOP-G613JOF with PID 23384 (E:\PersonBlog\target\classes started by 汤老 in E:\PersonBlog)
+2020-08-24 09:41:44.615 DEBUG 23384 --- [restartedMain] com.personblog.PersonBlogApplication     : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-08-24 09:41:44.616  INFO 23384 --- [restartedMain] com.personblog.PersonBlogApplication     : The following profiles are active: dev
+2020-08-24 09:41:45.119  INFO 23384 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-24 09:41:45.120  INFO 23384 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-24 09:41:45.120  INFO 23384 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-08-24 09:41:45.183  INFO 23384 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-24 09:41:45.183  INFO 23384 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 563 ms
+2020-08-24 09:41:45.561  INFO 23384 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-24 09:41:45.597  INFO 23384 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-08-24 09:41:45.790  INFO 23384 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-08-24 09:41:45.803  INFO 23384 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-24 09:41:45.807  INFO 23384 --- [restartedMain] com.personblog.PersonBlogApplication     : Started PersonBlogApplication in 1.269 seconds (JVM running for 2185.019)
+2020-08-24 09:41:45.809  INFO 23384 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-08-24 10:18:04.117  INFO 23384 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-24 10:18:04.135  INFO 23384 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-24 10:18:04.233  INFO 23384 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 98 ms
+2020-08-24 10:18:09.467  INFO 23384 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-08-24 10:18:09.548  INFO 23384 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-08-24 10:18:09.550 DEBUG 23384 --- [http-nio-8080-exec-2] com.personblog.dao.UserMapper.login      : ==>  Preparing: select username, password from t_user where username=? and password=?;
+2020-08-24 10:18:09.555 DEBUG 23384 --- [http-nio-8080-exec-2] com.personblog.dao.UserMapper.login      : ==> Parameters: tml(String), 123(String)
+2020-08-24 10:18:09.598 DEBUG 23384 --- [http-nio-8080-exec-2] com.personblog.dao.UserMapper.login      : <==      Total: 1
+2020-08-24 10:18:14.272 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-08-24 10:18:14.274 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==> Parameters: 
+2020-08-24 10:18:14.303 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : <==      Total: 1
+2020-08-24 10:18:14.307 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.getAllBlogQuery       : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-08-24 10:18:14.308 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.getAllBlogQuery       : ==> Parameters: 5(Integer)
+2020-08-24 10:18:14.319 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.getAllBlogQuery       : <==      Total: 5
+2020-08-24 10:18:14.332 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: select id, name from t_type
+2020-08-24 10:18:14.332 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 
+2020-08-24 10:18:14.334 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.dao.TypeMapper.selectAllType         : <==      Total: 9
+2020-08-24 10:18:21.705 DEBUG 23384 --- [http-nio-8080-exec-5] c.p.dao.TypeMapper.selectAllType_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type
+2020-08-24 10:18:21.705 DEBUG 23384 --- [http-nio-8080-exec-5] c.p.dao.TypeMapper.selectAllType_COUNT   : ==> Parameters: 
+2020-08-24 10:18:21.707 DEBUG 23384 --- [http-nio-8080-exec-5] c.p.dao.TypeMapper.selectAllType_COUNT   : <==      Total: 1
+2020-08-24 10:18:21.708 DEBUG 23384 --- [http-nio-8080-exec-5] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: SELECT id, name FROM t_type order by id desc LIMIT ?
+2020-08-24 10:18:21.708 DEBUG 23384 --- [http-nio-8080-exec-5] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 5(Integer)
+2020-08-24 10:18:21.710 DEBUG 23384 --- [http-nio-8080-exec-5] c.p.dao.TypeMapper.selectAllType         : <==      Total: 5
+2020-08-24 10:18:25.539 DEBUG 23384 --- [http-nio-8080-exec-5] c.p.dao.TagMapper.selectAllTag_COUNT     : ==>  Preparing: SELECT count(0) FROM t_tag
+2020-08-24 10:18:25.539 DEBUG 23384 --- [http-nio-8080-exec-5] c.p.dao.TagMapper.selectAllTag_COUNT     : ==> Parameters: 
+2020-08-24 10:18:25.554 DEBUG 23384 --- [http-nio-8080-exec-5] c.p.dao.TagMapper.selectAllTag_COUNT     : <==      Total: 1
+2020-08-24 10:18:25.556 DEBUG 23384 --- [http-nio-8080-exec-5] c.personblog.dao.TagMapper.selectAllTag  : ==>  Preparing: SELECT id, name FROM t_tag order by id desc LIMIT ?
+2020-08-24 10:18:25.557 DEBUG 23384 --- [http-nio-8080-exec-5] c.personblog.dao.TagMapper.selectAllTag  : ==> Parameters: 5(Integer)
+2020-08-24 10:18:25.559 DEBUG 23384 --- [http-nio-8080-exec-5] c.personblog.dao.TagMapper.selectAllTag  : <==      Total: 5
+2020-08-24 10:18:26.478 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-08-24 10:18:26.479 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==> Parameters: 
+2020-08-24 10:18:26.480 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : <==      Total: 1
+2020-08-24 10:18:26.483 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getAllBlogQuery       : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-08-24 10:18:26.484 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getAllBlogQuery       : ==> Parameters: 5(Integer)
+2020-08-24 10:18:26.492 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getAllBlogQuery       : <==      Total: 5
+2020-08-24 10:18:26.494 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: select id, name from t_type
+2020-08-24 10:18:26.494 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 
+2020-08-24 10:18:26.495 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllType         : <==      Total: 9
+2020-08-24 10:18:33.503 DEBUG 23384 --- [http-nio-8080-exec-10] c.personblog.dao.TagMapper.selectAllTag  : ==>  Preparing: select id, name from t_tag
+2020-08-24 10:18:33.503 DEBUG 23384 --- [http-nio-8080-exec-10] c.personblog.dao.TagMapper.selectAllTag  : ==> Parameters: 
+2020-08-24 10:18:33.504 DEBUG 23384 --- [http-nio-8080-exec-10] c.personblog.dao.TagMapper.selectAllTag  : <==      Total: 7
+2020-08-24 10:18:33.506 DEBUG 23384 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: select id, name from t_type
+2020-08-24 10:18:33.506 DEBUG 23384 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 
+2020-08-24 10:18:33.507 DEBUG 23384 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllType         : <==      Total: 9
+2020-08-24 10:18:42.768  INFO 23384 --- [http-nio-8080-exec-3] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.index', args=[{}, 1]}
+2020-08-24 10:18:42.777 DEBUG 23384 --- [http-nio-8080-exec-3] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE published = true AND b.type_id = t.id AND b.user_id = u.id
+2020-08-24 10:18:42.777 DEBUG 23384 --- [http-nio-8080-exec-3] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==> Parameters: 
+2020-08-24 10:18:42.781 DEBUG 23384 --- [http-nio-8080-exec-3] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : <==      Total: 1
+2020-08-24 10:18:42.782 DEBUG 23384 --- [http-nio-8080-exec-3] c.p.dao.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id, b.title, b.first_picture, b.views, b.comment_count, b.update_time, b.description, u.avatar, u.nickname, t.name from t_blog b, t_type t, t_user u where published = true and b.type_id = t.id and b.user_id = u.id order by update_time desc LIMIT ?
+2020-08-24 10:18:42.783 DEBUG 23384 --- [http-nio-8080-exec-3] c.p.dao.BlogMapper.getFirstPageBlog      : ==> Parameters: 4(Integer)
+2020-08-24 10:18:42.788 DEBUG 23384 --- [http-nio-8080-exec-3] c.p.dao.BlogMapper.getFirstPageBlog      : <==      Total: 4
+2020-08-24 10:18:42.791 DEBUG 23384 --- [http-nio-8080-exec-3] c.p.dao.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select id, title, first_picture, recommend from t_blog order by t_blog.update_time desc limit 4
+2020-08-24 10:18:42.791 DEBUG 23384 --- [http-nio-8080-exec-3] c.p.dao.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-08-24 10:18:42.792 DEBUG 23384 --- [http-nio-8080-exec-3] c.p.dao.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-08-24 10:18:42.795 DEBUG 23384 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where published = true and t.id = b.type_id
+2020-08-24 10:18:42.795 DEBUG 23384 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-08-24 10:18:42.801 DEBUG 23384 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 6
+2020-08-24 10:18:42.803 DEBUG 23384 --- [http-nio-8080-exec-3] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_tag t, t_blog b, t_blog_tag bt where published = true and t.id = bt.tag_id and b.id = bt.blog_id
+2020-08-24 10:18:42.803 DEBUG 23384 --- [http-nio-8080-exec-3] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-08-24 10:18:42.815 DEBUG 23384 --- [http-nio-8080-exec-3] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 10
+2020-08-24 10:18:42.816  INFO 23384 --- [http-nio-8080-exec-3] com.personblog.aspect.LogAspect          : Result : index
+2020-08-24 10:18:48.943  INFO 23384 --- [http-nio-8080-exec-9] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/blog/7', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.blog', args=[7, {}]}
+2020-08-24 10:18:48.958 DEBUG 23384 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getDetailedBlog       : ==>  Preparing: select b.id bid,b.first_picture,b.flag,b.title,b.content,b.views, b.comment_count,b.update_time,b.commentabled,b.share_statement,b.appreciation, u.nickname,u.avatar, t.name from t_blog b, t_user u, t_blog_tag tb, t_tag t where b.published=true and b.user_id = u.id and tb.blog_id = b.id and tb.tag_id = t.id and b.id = ?
+2020-08-24 10:18:48.960 DEBUG 23384 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getDetailedBlog       : ==> Parameters: 7(Long)
+2020-08-24 10:18:48.974 DEBUG 23384 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getDetailedBlog       : <==      Total: 3
+2020-08-24 10:18:49.072 DEBUG 23384 --- [http-nio-8080-exec-9] c.personblog.dao.BlogMapper.updateViews  : ==>  Preparing: update t_blog b set b.views = b.views + 1 where b.id = ?
+2020-08-24 10:18:49.072 DEBUG 23384 --- [http-nio-8080-exec-9] c.personblog.dao.BlogMapper.updateViews  : ==> Parameters: 7(Long)
+2020-08-24 10:18:49.087 DEBUG 23384 --- [http-nio-8080-exec-9] c.personblog.dao.BlogMapper.updateViews  : <==    Updates: 1
+2020-08-24 10:18:49.088 DEBUG 23384 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getCommentCountById   : ==>  Preparing: update t_blog b set b.comment_count = ( select count(*) from t_comment c where c.blog_id = ? and b.id = ? ) WHERE b.id = ?
+2020-08-24 10:18:49.089 DEBUG 23384 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getCommentCountById   : ==> Parameters: 7(Long), 7(Long), 7(Long)
+2020-08-24 10:18:49.103 DEBUG 23384 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getCommentCountById   : <==    Updates: 1
+2020-08-24 10:18:49.113 DEBUG 23384 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdParentIdNull         : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-08-24 10:18:49.113 DEBUG 23384 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdParentIdNull         : ==> Parameters: 7(Long), -1(Long)
+2020-08-24 10:18:49.115 DEBUG 23384 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdParentIdNull         : <==      Total: 0
+2020-08-24 10:18:49.116  INFO 23384 --- [http-nio-8080-exec-9] com.personblog.aspect.LogAspect          : Result : blog
+2020-08-24 10:18:58.296  INFO 23384 --- [http-nio-8080-exec-5] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TagShowController.tag', args=[1, -1, {}]}
+2020-08-24 10:18:58.304 DEBUG 23384 --- [http-nio-8080-exec-5] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_tag t, t_blog b, t_blog_tag bt where published = true and t.id = bt.tag_id and b.id = bt.blog_id
+2020-08-24 10:18:58.304 DEBUG 23384 --- [http-nio-8080-exec-5] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-08-24 10:18:58.306 DEBUG 23384 --- [http-nio-8080-exec-5] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 10
+2020-08-24 10:18:58.307 DEBUG 23384 --- [http-nio-8080-exec-5] c.personblog.dao.BlogMapper.getByTagId   : ==>  Preparing: select b.id, b.title, b.first_picture, b.views, b.update_time, b.description,b.comment_count, t.name, u.nickname,u.avatar from t_blog b, t_type t, t_user u , t_blog_tag tb, t_tag t1 where published = true and b.type_id = t.id and u.id = b.user_id and tb.blog_id = b.id and tb.tag_id = t1.id and t1.id = ? order by b.update_time desc
+2020-08-24 10:18:58.307 DEBUG 23384 --- [http-nio-8080-exec-5] c.personblog.dao.BlogMapper.getByTagId   : ==> Parameters: 1(Long)
+2020-08-24 10:18:58.309 DEBUG 23384 --- [http-nio-8080-exec-5] c.personblog.dao.BlogMapper.getByTagId   : <==      Total: 1
+2020-08-24 10:18:58.310  INFO 23384 --- [http-nio-8080-exec-5] com.personblog.aspect.LogAspect          : Result : tags
+2020-08-24 10:19:00.302  INFO 23384 --- [http-nio-8080-exec-6] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.ArchiveShowController.archive', args=[{}]}
+2020-08-24 10:19:00.305 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.findGroupYear         : ==>  Preparing: select date_format(b.update_time,'%Y') as year from t_blog b group by year order by year desc
+2020-08-24 10:19:00.305 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.findGroupYear         : ==> Parameters: 
+2020-08-24 10:19:00.313 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.findGroupYear         : <==      Total: 1
+2020-08-24 10:19:00.315 DEBUG 23384 --- [http-nio-8080-exec-6] c.personblog.dao.BlogMapper.findByYear   : ==>  Preparing: select b.id,b.title,b.update_time,b.flag from t_blog b where date_format(b.update_time,'%Y')=? order by b.update_time
+2020-08-24 10:19:00.317 DEBUG 23384 --- [http-nio-8080-exec-6] c.personblog.dao.BlogMapper.findByYear   : ==> Parameters: 2020(String)
+2020-08-24 10:19:00.318 DEBUG 23384 --- [http-nio-8080-exec-6] c.personblog.dao.BlogMapper.findByYear   : <==      Total: 6
+2020-08-24 10:19:00.319 DEBUG 23384 --- [http-nio-8080-exec-6] com.personblog.dao.BlogMapper.count      : ==>  Preparing: select count(*) from t_blog
+2020-08-24 10:19:00.320 DEBUG 23384 --- [http-nio-8080-exec-6] com.personblog.dao.BlogMapper.count      : ==> Parameters: 
+2020-08-24 10:19:00.320 DEBUG 23384 --- [http-nio-8080-exec-6] com.personblog.dao.BlogMapper.count      : <==      Total: 1
+2020-08-24 10:19:00.321  INFO 23384 --- [http-nio-8080-exec-6] com.personblog.aspect.LogAspect          : Result : archives
+2020-08-24 10:19:01.914  INFO 23384 --- [http-nio-8080-exec-10] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TypeShowController.typeShow', args=[{}, -1, 1]}
+2020-08-24 10:19:01.917 DEBUG 23384 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where published = true and t.id = b.type_id
+2020-08-24 10:19:01.918 DEBUG 23384 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-08-24 10:19:01.919 DEBUG 23384 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 6
+2020-08-24 10:19:01.921 DEBUG 23384 --- [http-nio-8080-exec-10] c.personblog.dao.BlogMapper.getByTypeId  : ==>  Preparing: select b.id,b.title,b.first_picture, b.views,b.update_time,b.description, b.comment_count, t.name , u.nickname, u.avatar from t_blog b, t_type t, t_user u where published = true and b.type_id = t.id and u.id = b.user_id and b.type_id = ? order by b.update_time desc
+2020-08-24 10:19:01.921 DEBUG 23384 --- [http-nio-8080-exec-10] c.personblog.dao.BlogMapper.getByTypeId  : ==> Parameters: 7(Long)
+2020-08-24 10:19:01.923 DEBUG 23384 --- [http-nio-8080-exec-10] c.personblog.dao.BlogMapper.getByTypeId  : <==      Total: 3
+2020-08-24 10:19:01.923  INFO 23384 --- [http-nio-8080-exec-10] com.personblog.aspect.LogAspect          : Result : types
+2020-08-24 10:19:02.906  INFO 23384 --- [http-nio-8080-exec-9] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.AboutShowController.about', args=[]}
+2020-08-24 10:19:02.908  INFO 23384 --- [http-nio-8080-exec-9] com.personblog.aspect.LogAspect          : Result : about
+2020-08-24 10:19:05.019  INFO 23384 --- [http-nio-8080-exec-6] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.index', args=[{}, 1]}
+2020-08-24 10:19:05.021 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE published = true AND b.type_id = t.id AND b.user_id = u.id
+2020-08-24 10:19:05.021 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==> Parameters: 
+2020-08-24 10:19:05.022 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : <==      Total: 1
+2020-08-24 10:19:05.022 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id, b.title, b.first_picture, b.views, b.comment_count, b.update_time, b.description, u.avatar, u.nickname, t.name from t_blog b, t_type t, t_user u where published = true and b.type_id = t.id and b.user_id = u.id order by update_time desc LIMIT ?
+2020-08-24 10:19:05.023 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.getFirstPageBlog      : ==> Parameters: 4(Integer)
+2020-08-24 10:19:05.024 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.getFirstPageBlog      : <==      Total: 4
+2020-08-24 10:19:05.025 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select id, title, first_picture, recommend from t_blog order by t_blog.update_time desc limit 4
+2020-08-24 10:19:05.025 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-08-24 10:19:05.026 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-08-24 10:19:05.028 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where published = true and t.id = b.type_id
+2020-08-24 10:19:05.028 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-08-24 10:19:05.031 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 6
+2020-08-24 10:19:05.035 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_tag t, t_blog b, t_blog_tag bt where published = true and t.id = bt.tag_id and b.id = bt.blog_id
+2020-08-24 10:19:05.035 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-08-24 10:19:05.037 DEBUG 23384 --- [http-nio-8080-exec-6] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 10
+2020-08-24 10:19:05.037  INFO 23384 --- [http-nio-8080-exec-6] com.personblog.aspect.LogAspect          : Result : index
+2020-08-24 10:19:13.172  INFO 23384 --- [http-nio-8080-exec-8] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TagShowController.tag', args=[1, -1, {}]}
+2020-08-24 10:19:13.173 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_tag t, t_blog b, t_blog_tag bt where published = true and t.id = bt.tag_id and b.id = bt.blog_id
+2020-08-24 10:19:13.174 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-08-24 10:19:13.176 DEBUG 23384 --- [http-nio-8080-exec-8] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 10
+2020-08-24 10:19:13.181 DEBUG 23384 --- [http-nio-8080-exec-8] c.personblog.dao.BlogMapper.getByTagId   : ==>  Preparing: select b.id, b.title, b.first_picture, b.views, b.update_time, b.description,b.comment_count, t.name, u.nickname,u.avatar from t_blog b, t_type t, t_user u , t_blog_tag tb, t_tag t1 where published = true and b.type_id = t.id and u.id = b.user_id and tb.blog_id = b.id and tb.tag_id = t1.id and t1.id = ? order by b.update_time desc
+2020-08-24 10:19:13.182 DEBUG 23384 --- [http-nio-8080-exec-8] c.personblog.dao.BlogMapper.getByTagId   : ==> Parameters: 1(Long)
+2020-08-24 10:19:13.184 DEBUG 23384 --- [http-nio-8080-exec-8] c.personblog.dao.BlogMapper.getByTagId   : <==      Total: 1
+2020-08-24 10:19:13.186  INFO 23384 --- [http-nio-8080-exec-8] com.personblog.aspect.LogAspect          : Result : tags
+2020-08-24 10:19:14.463  INFO 23384 --- [http-nio-8080-exec-5] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TypeShowController.typeShow', args=[{}, -1, 1]}
+2020-08-24 10:19:14.465 DEBUG 23384 --- [http-nio-8080-exec-5] c.p.d.T.selectAllTypeAndBlog_COUNT       : ==>  Preparing: SELECT count(0) FROM t_type t, t_blog b WHERE published = true AND t.id = b.type_id
+2020-08-24 10:19:14.466 DEBUG 23384 --- [http-nio-8080-exec-5] c.p.d.T.selectAllTypeAndBlog_COUNT       : ==> Parameters: 
+2020-08-24 10:19:14.466 DEBUG 23384 --- [http-nio-8080-exec-5] c.p.d.T.selectAllTypeAndBlog_COUNT       : <==      Total: 1
+2020-08-24 10:19:14.467 DEBUG 23384 --- [http-nio-8080-exec-5] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where published = true and t.id = b.type_id LIMIT ?
+2020-08-24 10:19:14.467 DEBUG 23384 --- [http-nio-8080-exec-5] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 100(Integer)
+2020-08-24 10:19:14.468 DEBUG 23384 --- [http-nio-8080-exec-5] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 6
+2020-08-24 10:19:14.469 DEBUG 23384 --- [http-nio-8080-exec-5] c.personblog.dao.BlogMapper.getByTypeId  : ==>  Preparing: select b.id,b.title,b.first_picture, b.views,b.update_time,b.description, b.comment_count, t.name , u.nickname, u.avatar from t_blog b, t_type t, t_user u where published = true and b.type_id = t.id and u.id = b.user_id and b.type_id = ? order by b.update_time desc
+2020-08-24 10:19:14.470 DEBUG 23384 --- [http-nio-8080-exec-5] c.personblog.dao.BlogMapper.getByTypeId  : ==> Parameters: 7(Long)
+2020-08-24 10:19:14.472 DEBUG 23384 --- [http-nio-8080-exec-5] c.personblog.dao.BlogMapper.getByTypeId  : <==      Total: 3
+2020-08-24 10:19:14.473  INFO 23384 --- [http-nio-8080-exec-5] com.personblog.aspect.LogAspect          : Result : types
+2020-08-24 10:19:15.204  INFO 23384 --- [http-nio-8080-exec-4] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.index', args=[{}, 1]}
+2020-08-24 10:19:15.208 DEBUG 23384 --- [http-nio-8080-exec-4] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE published = true AND b.type_id = t.id AND b.user_id = u.id
+2020-08-24 10:19:15.208 DEBUG 23384 --- [http-nio-8080-exec-4] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==> Parameters: 
+2020-08-24 10:19:15.210 DEBUG 23384 --- [http-nio-8080-exec-4] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : <==      Total: 1
+2020-08-24 10:19:15.211 DEBUG 23384 --- [http-nio-8080-exec-4] c.p.dao.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id, b.title, b.first_picture, b.views, b.comment_count, b.update_time, b.description, u.avatar, u.nickname, t.name from t_blog b, t_type t, t_user u where published = true and b.type_id = t.id and b.user_id = u.id order by update_time desc LIMIT ?
+2020-08-24 10:19:15.211 DEBUG 23384 --- [http-nio-8080-exec-4] c.p.dao.BlogMapper.getFirstPageBlog      : ==> Parameters: 4(Integer)
+2020-08-24 10:19:15.218 DEBUG 23384 --- [http-nio-8080-exec-4] c.p.dao.BlogMapper.getFirstPageBlog      : <==      Total: 4
+2020-08-24 10:19:15.220 DEBUG 23384 --- [http-nio-8080-exec-4] c.p.dao.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select id, title, first_picture, recommend from t_blog order by t_blog.update_time desc limit 4
+2020-08-24 10:19:15.221 DEBUG 23384 --- [http-nio-8080-exec-4] c.p.dao.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-08-24 10:19:15.223 DEBUG 23384 --- [http-nio-8080-exec-4] c.p.dao.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-08-24 10:19:15.225 DEBUG 23384 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where published = true and t.id = b.type_id
+2020-08-24 10:19:15.225 DEBUG 23384 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-08-24 10:19:15.229 DEBUG 23384 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 6
+2020-08-24 10:19:15.231 DEBUG 23384 --- [http-nio-8080-exec-4] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_tag t, t_blog b, t_blog_tag bt where published = true and t.id = bt.tag_id and b.id = bt.blog_id
+2020-08-24 10:19:15.232 DEBUG 23384 --- [http-nio-8080-exec-4] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-08-24 10:19:15.239 DEBUG 23384 --- [http-nio-8080-exec-4] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 10
+2020-08-24 10:19:15.243  INFO 23384 --- [http-nio-8080-exec-4] com.personblog.aspect.LogAspect          : Result : index
+2020-08-24 10:19:39.108  INFO 23384 --- [http-nio-8080-exec-10] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TypeShowController.typeShow', args=[{}, -1, 1]}
+2020-08-24 10:19:39.109 DEBUG 23384 --- [http-nio-8080-exec-10] c.p.d.T.selectAllTypeAndBlog_COUNT       : ==>  Preparing: SELECT count(0) FROM t_type t, t_blog b WHERE published = true AND t.id = b.type_id
+2020-08-24 10:19:39.110 DEBUG 23384 --- [http-nio-8080-exec-10] c.p.d.T.selectAllTypeAndBlog_COUNT       : ==> Parameters: 
+2020-08-24 10:19:39.110 DEBUG 23384 --- [http-nio-8080-exec-10] c.p.d.T.selectAllTypeAndBlog_COUNT       : <==      Total: 1
+2020-08-24 10:19:39.111 DEBUG 23384 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where published = true and t.id = b.type_id LIMIT ?
+2020-08-24 10:19:39.111 DEBUG 23384 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 100(Integer)
+2020-08-24 10:19:39.114 DEBUG 23384 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 6
+2020-08-24 10:19:39.115 DEBUG 23384 --- [http-nio-8080-exec-10] c.personblog.dao.BlogMapper.getByTypeId  : ==>  Preparing: select b.id,b.title,b.first_picture, b.views,b.update_time,b.description, b.comment_count, t.name , u.nickname, u.avatar from t_blog b, t_type t, t_user u where published = true and b.type_id = t.id and u.id = b.user_id and b.type_id = ? order by b.update_time desc
+2020-08-24 10:19:39.115 DEBUG 23384 --- [http-nio-8080-exec-10] c.personblog.dao.BlogMapper.getByTypeId  : ==> Parameters: 7(Long)
+2020-08-24 10:19:39.116 DEBUG 23384 --- [http-nio-8080-exec-10] c.personblog.dao.BlogMapper.getByTypeId  : <==      Total: 3
+2020-08-24 10:19:39.117  INFO 23384 --- [http-nio-8080-exec-10] com.personblog.aspect.LogAspect          : Result : types
+2020-08-24 10:19:42.278  INFO 23384 --- [http-nio-8080-exec-9] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/blog/5', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.blog', args=[5, {}]}
+2020-08-24 10:19:42.279 DEBUG 23384 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getDetailedBlog       : ==>  Preparing: select b.id bid,b.first_picture,b.flag,b.title,b.content,b.views, b.comment_count,b.update_time,b.commentabled,b.share_statement,b.appreciation, u.nickname,u.avatar, t.name from t_blog b, t_user u, t_blog_tag tb, t_tag t where b.published=true and b.user_id = u.id and tb.blog_id = b.id and tb.tag_id = t.id and b.id = ?
+2020-08-24 10:19:42.279 DEBUG 23384 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getDetailedBlog       : ==> Parameters: 5(Long)
+2020-08-24 10:19:42.281 DEBUG 23384 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getDetailedBlog       : <==      Total: 1
+2020-08-24 10:19:42.284 DEBUG 23384 --- [http-nio-8080-exec-9] c.personblog.dao.BlogMapper.updateViews  : ==>  Preparing: update t_blog b set b.views = b.views + 1 where b.id = ?
+2020-08-24 10:19:42.284 DEBUG 23384 --- [http-nio-8080-exec-9] c.personblog.dao.BlogMapper.updateViews  : ==> Parameters: 5(Long)
+2020-08-24 10:19:42.286 DEBUG 23384 --- [http-nio-8080-exec-9] c.personblog.dao.BlogMapper.updateViews  : <==    Updates: 1
+2020-08-24 10:19:42.287 DEBUG 23384 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getCommentCountById   : ==>  Preparing: update t_blog b set b.comment_count = ( select count(*) from t_comment c where c.blog_id = ? and b.id = ? ) WHERE b.id = ?
+2020-08-24 10:19:42.288 DEBUG 23384 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getCommentCountById   : ==> Parameters: 5(Long), 5(Long), 5(Long)
+2020-08-24 10:19:42.289 DEBUG 23384 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getCommentCountById   : <==    Updates: 1
+2020-08-24 10:19:42.294 DEBUG 23384 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdParentIdNull         : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-08-24 10:19:42.294 DEBUG 23384 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdParentIdNull         : ==> Parameters: 5(Long), -1(Long)
+2020-08-24 10:19:42.295 DEBUG 23384 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdParentIdNull         : <==      Total: 0
+2020-08-24 10:19:42.295  INFO 23384 --- [http-nio-8080-exec-9] com.personblog.aspect.LogAspect          : Result : blog
+2020-08-24 10:19:49.397  INFO 23384 --- [http-nio-8080-exec-3] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TypeShowController.typeShow', args=[{}, -1, 1]}
+2020-08-24 10:19:49.399 DEBUG 23384 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where published = true and t.id = b.type_id
+2020-08-24 10:19:49.399 DEBUG 23384 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-08-24 10:19:49.401 DEBUG 23384 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 6
+2020-08-24 10:19:49.402 DEBUG 23384 --- [http-nio-8080-exec-3] c.personblog.dao.BlogMapper.getByTypeId  : ==>  Preparing: select b.id,b.title,b.first_picture, b.views,b.update_time,b.description, b.comment_count, t.name , u.nickname, u.avatar from t_blog b, t_type t, t_user u where published = true and b.type_id = t.id and u.id = b.user_id and b.type_id = ? order by b.update_time desc
+2020-08-24 10:19:49.402 DEBUG 23384 --- [http-nio-8080-exec-3] c.personblog.dao.BlogMapper.getByTypeId  : ==> Parameters: 7(Long)
+2020-08-24 10:19:49.403 DEBUG 23384 --- [http-nio-8080-exec-3] c.personblog.dao.BlogMapper.getByTypeId  : <==      Total: 3
+2020-08-24 10:19:49.404  INFO 23384 --- [http-nio-8080-exec-3] com.personblog.aspect.LogAspect          : Result : types
+2020-08-24 10:19:50.965  INFO 23384 --- [http-nio-8080-exec-8] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.AboutShowController.about', args=[]}
+2020-08-24 10:19:50.965  INFO 23384 --- [http-nio-8080-exec-8] com.personblog.aspect.LogAspect          : Result : about
+2020-08-24 10:19:54.712  INFO 23384 --- [http-nio-8080-exec-2] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.index', args=[{}, 1]}
+2020-08-24 10:19:54.714 DEBUG 23384 --- [http-nio-8080-exec-2] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE published = true AND b.type_id = t.id AND b.user_id = u.id
+2020-08-24 10:19:54.714 DEBUG 23384 --- [http-nio-8080-exec-2] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==> Parameters: 
+2020-08-24 10:19:54.715 DEBUG 23384 --- [http-nio-8080-exec-2] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : <==      Total: 1
+2020-08-24 10:19:54.716 DEBUG 23384 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id, b.title, b.first_picture, b.views, b.comment_count, b.update_time, b.description, u.avatar, u.nickname, t.name from t_blog b, t_type t, t_user u where published = true and b.type_id = t.id and b.user_id = u.id order by update_time desc LIMIT ?
+2020-08-24 10:19:54.716 DEBUG 23384 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.getFirstPageBlog      : ==> Parameters: 4(Integer)
+2020-08-24 10:19:54.717 DEBUG 23384 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.getFirstPageBlog      : <==      Total: 4
+2020-08-24 10:19:54.719 DEBUG 23384 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select id, title, first_picture, recommend from t_blog order by t_blog.update_time desc limit 4
+2020-08-24 10:19:54.719 DEBUG 23384 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-08-24 10:19:54.721 DEBUG 23384 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-08-24 10:19:54.726 DEBUG 23384 --- [http-nio-8080-exec-2] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where published = true and t.id = b.type_id
+2020-08-24 10:19:54.727 DEBUG 23384 --- [http-nio-8080-exec-2] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-08-24 10:19:54.729 DEBUG 23384 --- [http-nio-8080-exec-2] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 6
+2020-08-24 10:19:54.731 DEBUG 23384 --- [http-nio-8080-exec-2] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_tag t, t_blog b, t_blog_tag bt where published = true and t.id = bt.tag_id and b.id = bt.blog_id
+2020-08-24 10:19:54.731 DEBUG 23384 --- [http-nio-8080-exec-2] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-08-24 10:19:54.733 DEBUG 23384 --- [http-nio-8080-exec-2] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 10
+2020-08-24 10:19:54.734  INFO 23384 --- [http-nio-8080-exec-2] com.personblog.aspect.LogAspect          : Result : index
+2020-08-24 10:48:44.939  INFO 23384 --- [Thread-190] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-24 10:48:44.947  INFO 23384 --- [Thread-190] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2020-08-24 10:48:44.955  INFO 23384 --- [Thread-190] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2020-08-24 10:48:45.634  INFO 23384 --- [restartedMain] com.personblog.PersonBlogApplication     : Starting PersonBlogApplication on DESKTOP-G613JOF with PID 23384 (E:\PersonBlog\target\classes started by 汤老 in E:\PersonBlog)
+2020-08-24 10:48:45.634 DEBUG 23384 --- [restartedMain] com.personblog.PersonBlogApplication     : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-08-24 10:48:45.635  INFO 23384 --- [restartedMain] com.personblog.PersonBlogApplication     : The following profiles are active: dev
+2020-08-24 10:48:46.102  INFO 23384 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-24 10:48:46.103  INFO 23384 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-24 10:48:46.103  INFO 23384 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-08-24 10:48:46.142  INFO 23384 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-24 10:48:46.142  INFO 23384 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 504 ms
+2020-08-24 10:48:46.394  INFO 23384 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-24 10:48:46.441  INFO 23384 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-08-24 10:48:46.632  INFO 23384 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-08-24 10:48:46.643  INFO 23384 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-24 10:48:46.647  INFO 23384 --- [restartedMain] com.personblog.PersonBlogApplication     : Started PersonBlogApplication in 1.057 seconds (JVM running for 6205.859)
+2020-08-24 10:48:46.649  INFO 23384 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-08-24 16:47:37.081  INFO 632 --- [restartedMain] com.personblog.PersonBlogApplication     : Starting PersonBlogApplication on DESKTOP-G613JOF with PID 632 (E:\PersonBlog\target\classes started by 汤老 in E:\PersonBlog)
+2020-08-24 16:47:37.084 DEBUG 632 --- [restartedMain] com.personblog.PersonBlogApplication     : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-08-24 16:47:37.084  INFO 632 --- [restartedMain] com.personblog.PersonBlogApplication     : The following profiles are active: dev
+2020-08-24 16:47:37.138  INFO 632 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-24 16:47:37.139  INFO 632 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-24 16:47:38.795  INFO 632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-24 16:47:38.806  INFO 632 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-24 16:47:38.806  INFO 632 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-08-24 16:47:38.895  INFO 632 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-24 16:47:38.895  INFO 632 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1756 ms
+2020-08-24 16:47:39.617  INFO 632 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-24 16:47:39.705  INFO 632 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-08-24 16:47:40.066  INFO 632 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-08-24 16:47:40.100  INFO 632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-24 16:47:40.111  INFO 632 --- [restartedMain] com.personblog.PersonBlogApplication     : Started PersonBlogApplication in 3.967 seconds (JVM running for 5.352)
+2020-08-24 16:47:45.770  INFO 632 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-24 16:47:45.770  INFO 632 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-24 16:47:45.782  INFO 632 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2020-08-24 16:47:45.826  INFO 632 --- [http-nio-8080-exec-1] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.index', args=[{}, 1]}
+2020-08-24 16:47:45.838  INFO 632 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-24 16:47:46.112  INFO 632 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-24 16:47:46.227 DEBUG 632 --- [http-nio-8080-exec-1] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE published = true AND b.type_id = t.id AND b.user_id = u.id
+2020-08-24 16:47:46.253 DEBUG 632 --- [http-nio-8080-exec-1] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==> Parameters: 
+2020-08-24 16:47:46.288 DEBUG 632 --- [http-nio-8080-exec-1] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : <==      Total: 1
+2020-08-24 16:47:46.291 DEBUG 632 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id, b.title, b.first_picture, b.views, b.comment_count, b.update_time, b.description, u.avatar, u.nickname, t.name from t_blog b, t_type t, t_user u where published = true and b.type_id = t.id and b.user_id = u.id order by update_time desc LIMIT ?
+2020-08-24 16:47:46.291 DEBUG 632 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getFirstPageBlog      : ==> Parameters: 4(Integer)
+2020-08-24 16:47:46.297 DEBUG 632 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getFirstPageBlog      : <==      Total: 4
+2020-08-24 16:47:46.304 DEBUG 632 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select id, title, first_picture, recommend from t_blog order by t_blog.update_time desc limit 4
+2020-08-24 16:47:46.305 DEBUG 632 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-08-24 16:47:46.307 DEBUG 632 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-08-24 16:47:46.315 DEBUG 632 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where published = true and t.id = b.type_id
+2020-08-24 16:47:46.316 DEBUG 632 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-08-24 16:47:46.321 DEBUG 632 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 6
+2020-08-24 16:47:46.330 DEBUG 632 --- [http-nio-8080-exec-1] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_tag t, t_blog b, t_blog_tag bt where published = true and t.id = bt.tag_id and b.id = bt.blog_id
+2020-08-24 16:47:46.332 DEBUG 632 --- [http-nio-8080-exec-1] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-08-24 16:47:46.401 DEBUG 632 --- [http-nio-8080-exec-1] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 10
+2020-08-24 16:47:46.412  INFO 632 --- [http-nio-8080-exec-1] com.personblog.aspect.LogAspect          : Result : index
+2020-08-24 16:47:57.510 DEBUG 632 --- [http-nio-8080-exec-6] com.personblog.dao.UserMapper.login      : ==>  Preparing: select username, password from t_user where username=? and password=?;
+2020-08-24 16:47:57.511 DEBUG 632 --- [http-nio-8080-exec-6] com.personblog.dao.UserMapper.login      : ==> Parameters: tml(String), 123(String)
+2020-08-24 16:47:57.511 DEBUG 632 --- [http-nio-8080-exec-6] com.personblog.dao.UserMapper.login      : <==      Total: 1
+2020-08-24 16:47:59.217 DEBUG 632 --- [http-nio-8080-exec-6] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-08-24 16:47:59.218 DEBUG 632 --- [http-nio-8080-exec-6] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==> Parameters: 
+2020-08-24 16:47:59.219 DEBUG 632 --- [http-nio-8080-exec-6] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : <==      Total: 1
+2020-08-24 16:47:59.224 DEBUG 632 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.getAllBlogQuery       : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-08-24 16:47:59.224 DEBUG 632 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.getAllBlogQuery       : ==> Parameters: 5(Integer)
+2020-08-24 16:47:59.226 DEBUG 632 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.getAllBlogQuery       : <==      Total: 5
+2020-08-24 16:47:59.228 DEBUG 632 --- [http-nio-8080-exec-6] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: select id, name from t_type
+2020-08-24 16:47:59.228 DEBUG 632 --- [http-nio-8080-exec-6] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 
+2020-08-24 16:47:59.230 DEBUG 632 --- [http-nio-8080-exec-6] c.p.dao.TypeMapper.selectAllType         : <==      Total: 9
+2020-08-24 16:48:01.362 DEBUG 632 --- [http-nio-8080-exec-1] c.personblog.dao.BlogMapper.getBlogById  : ==>  Preparing: select b.id,b.published,b.flag,b.title,b.content,b.type_id, b.tag_ids,b.first_picture,b.description,b.recommend,b.share_statement, b.appreciation,b.commentabled from t_blog b where b.id = ?
+2020-08-24 16:48:01.362 DEBUG 632 --- [http-nio-8080-exec-1] c.personblog.dao.BlogMapper.getBlogById  : ==> Parameters: 7(Long)
+2020-08-24 16:48:01.366 DEBUG 632 --- [http-nio-8080-exec-1] c.personblog.dao.BlogMapper.getBlogById  : <==      Total: 1
+2020-08-24 16:48:01.368 DEBUG 632 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: select id, name from t_type
+2020-08-24 16:48:01.368 DEBUG 632 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 
+2020-08-24 16:48:01.376 DEBUG 632 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllType         : <==      Total: 9
+2020-08-24 16:48:01.378 DEBUG 632 --- [http-nio-8080-exec-1] c.personblog.dao.TagMapper.selectAllTag  : ==>  Preparing: select id, name from t_tag
+2020-08-24 16:48:01.378 DEBUG 632 --- [http-nio-8080-exec-1] c.personblog.dao.TagMapper.selectAllTag  : ==> Parameters: 
+2020-08-24 16:48:01.379 DEBUG 632 --- [http-nio-8080-exec-1] c.personblog.dao.TagMapper.selectAllTag  : <==      Total: 7
+2020-08-24 16:48:06.656 DEBUG 632 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectTypeById        : ==>  Preparing: select id, name from t_type where id = ?
+2020-08-24 16:48:06.657 DEBUG 632 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectTypeById        : ==> Parameters: 14(Long)
+2020-08-24 16:48:06.657 DEBUG 632 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectTypeById        : <==      Total: 1
+2020-08-24 16:48:06.659 DEBUG 632 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectTagById          : ==>  Preparing: select id, name from t_tag where id = ?
+2020-08-24 16:48:06.659 DEBUG 632 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectTagById          : ==> Parameters: 6(Long)
+2020-08-24 16:48:06.660 DEBUG 632 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectTagById          : <==      Total: 1
+2020-08-24 16:48:06.661 DEBUG 632 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectTagById          : ==>  Preparing: select id, name from t_tag where id = ?
+2020-08-24 16:48:06.661 DEBUG 632 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectTagById          : ==> Parameters: 7(Long)
+2020-08-24 16:48:06.662 DEBUG 632 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectTagById          : <==      Total: 1
+2020-08-24 16:48:06.662 DEBUG 632 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectTagById          : ==>  Preparing: select id, name from t_tag where id = ?
+2020-08-24 16:48:06.663 DEBUG 632 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectTagById          : ==> Parameters: 2(Long)
+2020-08-24 16:48:06.668 DEBUG 632 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectTagById          : <==      Total: 1
+2020-08-24 16:48:06.672 DEBUG 632 --- [http-nio-8080-exec-7] com.personblog.dao.BlogMapper.saveBlog   : ==>  Preparing: insert into t_blog (title, content, first_picture, flag, views, comment_count, appreciation, share_statement, commentabled, published, recommend, create_time, update_time, type_id, user_id, description, tag_ids) values (?,?,?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?)
+2020-08-24 16:48:06.674 DEBUG 632 --- [http-nio-8080-exec-7] com.personblog.dao.BlogMapper.saveBlog   : ==> Parameters: JDK的动态(String), ## 静态代理
+**代理类是手工创建的 代理的目标类是固定的**。
+
+实现步骤：
+1. 创建一个接口，定义卖u盘的方法，表示你的厂家和商家做的事情
+2. 创建厂家类，实现1步骤的接口
+3. 创建商家，就是代理，实现1步骤的接口
+4. 创建客户类，调用商家的方法购买u盘
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200618090146360.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NkX2xhb3Rhbmc=,size_16,color_FFFFFF,t_70)
+客户——>商家（代理类：比如淘宝京东）——厂家（目标类）
+
+代理的作用:
+
+- 功能增强：在原有功能的基础上增加了额外的功能。
+- 控制访问：代理类不让客户能直接访问目标对象。
+
+静态代理：
+- 优点：实现简单，容易理解
+
+- 缺点：当项目中的目标类与代理类数量（多个商家）增多时，修改接口中的方法会使工作量增大，所以就要使用动态代理，jdk提供的方法会帮我们创建代理类的对象，不用我们自己创建。
+
+## 动态代理
+1、**当在接口中修改方法时，不用修改代理类**。
+使用jdk的反射机制，创建对象的能力，创建的是代理类的对象，而不用你创建代理类文件
+动态:在程序执行时，调用jdk提供的方法才能创建代理类的对象
+
+2、**动态代理的实现**
+
+- JDK动态代理：使用java反射包中的类和接口实现动态代理的功能。
+反射包：java.lang.reflect
+里面有三个类：InvocationHandler（接口）、Method、Proxy
+- cglib代理：第三方的开源项目，高效的code生成类库，可以在运行期间扩展java类，实现java接口，被广泛的AOP框架使用
+
+使用JDK动态代理，要求目标类与代理类实现相同的接口。若目标类无接口，则不能使用该方法实现。此时可以考虑使用cgLib。cgLib代理的生成原理使生成目标类的子类，子类对象即代理对象。因此目标类不能是final的。
+
+**实现动态代理的步骤**：
+1. 创建接口，定义目标类要实现的功能
+2. 创建目标类实现接口
+3. 创建InvocationHandler接口的实现类，在invoke方法中完成代理类的功能
+4. 使用Proxy类的静态方法，创建代理对象，并把返回值转为接口类型
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200618091124569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NkX2xhb3Rhbmc=,size_16,color_FFFFFF,t_70)
+
+这里定义一个接口,里面有一个sell方法，厂家类实现这个接口，再创建InvocationHandler接口的实现类(MySellHandle)，在invoke方法中完成代理类的功能。
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2020061809154190.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NkX2xhb3Rhbmc=,size_16,color_FFFFFF,t_70)
+MainShop类：
+
+```java
+package com;
+
+import com.factory.UsbKingFactory;
+import com.handle.MySellHandle;
+import com.service.UsbSell;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
+
+public class ShopMain {
+    public static void main(String[] args) {
+        //创建代理对象，使用proxy
+
+        //1、创建目标对象
+        UsbSell factory = new UsbKingFactory();
+
+        //2、创建invocationHandle对象
+        InvocationHandler handler = new MySellHandle(factory);
+
+        //3、创建代理对象
+        UsbSell proxy = (UsbSell) Proxy.newProxyInstance(factory.getClass().getClassLoader(),factory.getClass().getInterfaces(),handler);
+        //4、通过代理执行方法
+        float price = proxy.sell(1);
+        System.out.println("通过动态代理对象，调用方法：" + price);
+    }
+}
+```
+MySellHandle类：
+
+```java
+package com.handle;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+
+public class MySellHandle implements InvocationHandler {
+
+    private Object target = null;
+
+    //动态代理，目标对象是活动的，不是固定的，需要传入进来
+    //传入是谁，就给谁创建代理
+    public MySellHandle(Object target){
+        //给目标对象赋值
+        this.target = target;
+    }
+
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+
+        Object res = null;
+        //厂家发货
+        //float price = factory.sell(amount);//厂家的价格
+        res = method.invoke(target,args);//执行目标方法
+
+        if(res != null){
+            Float price = (Float) res;
+            price += 25;
+            res = price;
+        }
+        return res;
+    }
+}
+```
+
+(String), /images/firstpicture.jpg(String), 原创(String), 0(Integer), null, true(Boolean), true(Boolean), false(Boolean), true(Boolean), true(Boolean), 2020-08-24 16:48:06.671(Timestamp), 2020-08-24 16:48:06.671(Timestamp), 14(Long), 0(Long), jdk动态代理(String), 6,7,2(String)
+2020-08-24 16:48:06.674 DEBUG 632 --- [http-nio-8080-exec-7] com.personblog.dao.BlogMapper.saveBlog   : <==    Updates: 1
+2020-08-24 16:48:06.676 DEBUG 632 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.saveBlogAndTag        : ==>  Preparing: insert into t_blog_tag (tag_id, blog_id) values (?,?)
+2020-08-24 16:48:06.677 DEBUG 632 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.saveBlogAndTag        : ==> Parameters: 6(Long), 8(Long)
+2020-08-24 16:48:06.678 DEBUG 632 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.saveBlogAndTag        : <==    Updates: 1
+2020-08-24 16:48:06.679 DEBUG 632 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.saveBlogAndTag        : ==>  Preparing: insert into t_blog_tag (tag_id, blog_id) values (?,?)
+2020-08-24 16:48:06.680 DEBUG 632 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.saveBlogAndTag        : ==> Parameters: 7(Long), 8(Long)
+2020-08-24 16:48:06.684 DEBUG 632 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.saveBlogAndTag        : <==    Updates: 1
+2020-08-24 16:48:06.686 DEBUG 632 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.saveBlogAndTag        : ==>  Preparing: insert into t_blog_tag (tag_id, blog_id) values (?,?)
+2020-08-24 16:48:06.686 DEBUG 632 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.saveBlogAndTag        : ==> Parameters: 2(Long), 8(Long)
+2020-08-24 16:48:06.687 DEBUG 632 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.saveBlogAndTag        : <==    Updates: 1
+2020-08-24 16:48:06.718 DEBUG 632 --- [http-nio-8080-exec-4] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-08-24 16:48:06.718 DEBUG 632 --- [http-nio-8080-exec-4] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==> Parameters: 
+2020-08-24 16:48:06.719 DEBUG 632 --- [http-nio-8080-exec-4] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : <==      Total: 1
+2020-08-24 16:48:06.720 DEBUG 632 --- [http-nio-8080-exec-4] c.p.dao.BlogMapper.getAllBlogQuery       : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-08-24 16:48:06.721 DEBUG 632 --- [http-nio-8080-exec-4] c.p.dao.BlogMapper.getAllBlogQuery       : ==> Parameters: 5(Integer)
+2020-08-24 16:48:06.723 DEBUG 632 --- [http-nio-8080-exec-4] c.p.dao.BlogMapper.getAllBlogQuery       : <==      Total: 5
+2020-08-24 16:48:06.724 DEBUG 632 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: select id, name from t_type
+2020-08-24 16:48:06.724 DEBUG 632 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 
+2020-08-24 16:48:06.725 DEBUG 632 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType         : <==      Total: 9
+2020-08-24 17:00:19.795  INFO 632 --- [Thread-183] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-24 17:00:19.796  INFO 632 --- [Thread-183] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-08-24 17:00:19.801  INFO 632 --- [Thread-183] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-08-24 17:00:19.999  INFO 632 --- [restartedMain] com.personblog.PersonBlogApplication     : Starting PersonBlogApplication on DESKTOP-G613JOF with PID 632 (E:\PersonBlog\target\classes started by 汤老 in E:\PersonBlog)
+2020-08-24 17:00:20.000 DEBUG 632 --- [restartedMain] com.personblog.PersonBlogApplication     : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-08-24 17:00:20.000  INFO 632 --- [restartedMain] com.personblog.PersonBlogApplication     : The following profiles are active: dev
+2020-08-24 17:00:20.404  INFO 632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-24 17:00:20.404  INFO 632 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-24 17:00:20.404  INFO 632 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-08-24 17:00:20.442  INFO 632 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-24 17:00:20.442  INFO 632 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 439 ms
+2020-08-24 17:00:20.698  INFO 632 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-24 17:00:20.728  INFO 632 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-08-24 17:00:20.913  INFO 632 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-08-24 17:00:20.924  INFO 632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-24 17:00:20.928  INFO 632 --- [restartedMain] com.personblog.PersonBlogApplication     : Started PersonBlogApplication in 0.963 seconds (JVM running for 766.17)
+2020-08-24 17:00:20.930  INFO 632 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-08-24 17:16:40.954  INFO 11640 --- [restartedMain] com.personblog.PersonBlogApplication     : Starting PersonBlogApplication on DESKTOP-G613JOF with PID 11640 (E:\PersonBlog\target\classes started by 汤老 in E:\PersonBlog)
+2020-08-24 17:16:40.958 DEBUG 11640 --- [restartedMain] com.personblog.PersonBlogApplication     : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-08-24 17:16:40.958  INFO 11640 --- [restartedMain] com.personblog.PersonBlogApplication     : The following profiles are active: dev
+2020-08-24 17:16:41.026  INFO 11640 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-24 17:16:41.027  INFO 11640 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-24 17:16:42.373  INFO 11640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-24 17:16:42.383  INFO 11640 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-24 17:16:42.383  INFO 11640 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-08-24 17:16:42.465  INFO 11640 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-24 17:16:42.465  INFO 11640 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1438 ms
+2020-08-24 17:16:43.120  INFO 11640 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-24 17:16:43.207  INFO 11640 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-08-24 17:16:43.514  INFO 11640 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-08-24 17:16:43.554  INFO 11640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-24 17:16:43.565  INFO 11640 --- [restartedMain] com.personblog.PersonBlogApplication     : Started PersonBlogApplication in 3.452 seconds (JVM running for 4.885)
+2020-08-24 17:16:50.846  INFO 11640 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-24 17:16:50.846  INFO 11640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-24 17:16:50.854  INFO 11640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-08-24 17:16:56.040  INFO 11640 --- [http-nio-8080-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-24 17:16:56.305  INFO 11640 --- [http-nio-8080-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-24 17:16:56.317 DEBUG 11640 --- [http-nio-8080-exec-9] com.personblog.dao.UserMapper.login      : ==>  Preparing: select username, password from t_user where username=? and password=?;
+2020-08-24 17:16:56.342 DEBUG 11640 --- [http-nio-8080-exec-9] com.personblog.dao.UserMapper.login      : ==> Parameters: tml(String), 123(String)
+2020-08-24 17:16:56.368 DEBUG 11640 --- [http-nio-8080-exec-9] com.personblog.dao.UserMapper.login      : <==      Total: 1
+2020-08-24 20:04:35.631 DEBUG 11640 --- [http-nio-8080-exec-2] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-08-24 20:04:35.648 DEBUG 11640 --- [http-nio-8080-exec-2] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==> Parameters: 
+2020-08-24 20:04:35.693 DEBUG 11640 --- [http-nio-8080-exec-2] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : <==      Total: 1
+2020-08-24 20:04:35.699 DEBUG 11640 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.getAllBlogQuery       : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-08-24 20:04:35.700 DEBUG 11640 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.getAllBlogQuery       : ==> Parameters: 5(Integer)
+2020-08-24 20:04:35.712 DEBUG 11640 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.getAllBlogQuery       : <==      Total: 5
+2020-08-24 20:04:35.726 DEBUG 11640 --- [http-nio-8080-exec-2] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: select id, name from t_type
+2020-08-24 20:04:35.727 DEBUG 11640 --- [http-nio-8080-exec-2] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 
+2020-08-24 20:04:35.730 DEBUG 11640 --- [http-nio-8080-exec-2] c.p.dao.TypeMapper.selectAllType         : <==      Total: 9
+2020-08-24 20:04:35.820 ERROR 11640 --- [http-nio-8080-exec-2] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-2] Exception processing template "admin/blogs": An error happened during template parsing (template: "class path resource [templates/admin/blogs.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/admin/blogs.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "session.user.username" (template: "admin/_fragments" - line 26, col 19)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 48 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "session.user.username" (template: "admin/_fragments" - line 26, col 19)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 50 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'username' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	... 72 common frames omitted
+
+2020-08-24 20:04:35.831 ERROR 11640 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/admin/blogs.html]")] with root cause
+
+org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'username' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2020-08-24 20:04:58.299  INFO 21400 --- [restartedMain] com.personblog.PersonBlogApplication     : Starting PersonBlogApplication on DESKTOP-G613JOF with PID 21400 (E:\PersonBlog\target\classes started by 汤老 in E:\PersonBlog)
+2020-08-24 20:04:58.301 DEBUG 21400 --- [restartedMain] com.personblog.PersonBlogApplication     : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-08-24 20:04:58.302  INFO 21400 --- [restartedMain] com.personblog.PersonBlogApplication     : The following profiles are active: dev
+2020-08-24 20:04:58.353  INFO 21400 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-24 20:04:58.353  INFO 21400 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-24 20:04:59.879  INFO 21400 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-24 20:04:59.887  INFO 21400 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-24 20:04:59.888  INFO 21400 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-08-24 20:04:59.987  INFO 21400 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-24 20:04:59.989  INFO 21400 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1634 ms
+2020-08-24 20:05:00.746  INFO 21400 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-24 20:05:00.828  INFO 21400 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-08-24 20:05:01.152  INFO 21400 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-08-24 20:05:01.186  INFO 21400 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-24 20:05:01.197  INFO 21400 --- [restartedMain] com.personblog.PersonBlogApplication     : Started PersonBlogApplication in 3.792 seconds (JVM running for 5.081)
+2020-08-24 20:05:03.751  INFO 21400 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-24 20:05:03.752  INFO 21400 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-24 20:05:03.766  INFO 21400 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2020-08-24 20:05:03.810  INFO 21400 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-24 20:05:04.018  INFO 21400 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-24 20:05:04.098 DEBUG 21400 --- [http-nio-8080-exec-1] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-08-24 20:05:04.118 DEBUG 21400 --- [http-nio-8080-exec-1] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==> Parameters: 
+2020-08-24 20:05:04.135 DEBUG 21400 --- [http-nio-8080-exec-1] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : <==      Total: 1
+2020-08-24 20:05:04.141 DEBUG 21400 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getAllBlogQuery       : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-08-24 20:05:04.142 DEBUG 21400 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getAllBlogQuery       : ==> Parameters: 5(Integer)
+2020-08-24 20:05:04.147 DEBUG 21400 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getAllBlogQuery       : <==      Total: 5
+2020-08-24 20:05:04.156 DEBUG 21400 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: select id, name from t_type
+2020-08-24 20:05:04.156 DEBUG 21400 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 
+2020-08-24 20:05:04.159 DEBUG 21400 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllType         : <==      Total: 9
+2020-08-24 20:05:04.638 ERROR 21400 --- [http-nio-8080-exec-1] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-1] Exception processing template "admin/blogs": An error happened during template parsing (template: "class path resource [templates/admin/blogs.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/admin/blogs.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "session.user.username" (template: "admin/_fragments" - line 26, col 19)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 48 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "session.user.username" (template: "admin/_fragments" - line 26, col 19)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 50 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'username' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	... 72 common frames omitted
+
+2020-08-24 20:05:04.641 ERROR 21400 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/admin/blogs.html]")] with root cause
+
+org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'username' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2020-08-24 20:06:25.838  INFO 28956 --- [restartedMain] com.personblog.PersonBlogApplication     : Starting PersonBlogApplication on DESKTOP-G613JOF with PID 28956 (E:\PersonBlog\target\classes started by 汤老 in E:\PersonBlog)
+2020-08-24 20:06:25.843 DEBUG 28956 --- [restartedMain] com.personblog.PersonBlogApplication     : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-08-24 20:06:25.844  INFO 28956 --- [restartedMain] com.personblog.PersonBlogApplication     : The following profiles are active: dev
+2020-08-24 20:06:25.896  INFO 28956 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-24 20:06:25.897  INFO 28956 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-24 20:06:27.210  INFO 28956 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-24 20:06:27.218  INFO 28956 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-24 20:06:27.218  INFO 28956 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-08-24 20:06:27.290  INFO 28956 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-24 20:06:27.290  INFO 28956 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1393 ms
+2020-08-24 20:06:27.898  INFO 28956 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-24 20:06:27.973  INFO 28956 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-08-24 20:06:28.299  INFO 28956 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-08-24 20:06:28.341  INFO 28956 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-24 20:06:28.351  INFO 28956 --- [restartedMain] com.personblog.PersonBlogApplication     : Started PersonBlogApplication in 3.181 seconds (JVM running for 4.558)
+2020-08-24 20:06:30.732  INFO 28956 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-24 20:06:30.733  INFO 28956 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-24 20:06:30.746  INFO 28956 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2020-08-24 20:08:05.680  INFO 28956 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-24 20:08:06.023  INFO 28956 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-24 20:08:06.031 DEBUG 28956 --- [http-nio-8080-exec-4] com.personblog.dao.UserMapper.login      : ==>  Preparing: select username, password from t_user where username=? and password=?;
+2020-08-24 20:08:06.061 DEBUG 28956 --- [http-nio-8080-exec-4] com.personblog.dao.UserMapper.login      : ==> Parameters: tml(String), 123(String)
+2020-08-24 20:08:06.084 DEBUG 28956 --- [http-nio-8080-exec-4] com.personblog.dao.UserMapper.login      : <==      Total: 1
+2020-08-24 20:08:12.012 DEBUG 28956 --- [http-nio-8080-exec-4] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-08-24 20:08:12.013 DEBUG 28956 --- [http-nio-8080-exec-4] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==> Parameters: 
+2020-08-24 20:08:12.038 DEBUG 28956 --- [http-nio-8080-exec-4] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : <==      Total: 1
+2020-08-24 20:08:12.041 DEBUG 28956 --- [http-nio-8080-exec-4] c.p.dao.BlogMapper.getAllBlogQuery       : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-08-24 20:08:12.042 DEBUG 28956 --- [http-nio-8080-exec-4] c.p.dao.BlogMapper.getAllBlogQuery       : ==> Parameters: 5(Integer)
+2020-08-24 20:08:12.045 DEBUG 28956 --- [http-nio-8080-exec-4] c.p.dao.BlogMapper.getAllBlogQuery       : <==      Total: 5
+2020-08-24 20:08:12.056 DEBUG 28956 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: select id, name from t_type
+2020-08-24 20:08:12.056 DEBUG 28956 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 
+2020-08-24 20:08:12.058 DEBUG 28956 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType         : <==      Total: 9
+2020-08-24 20:08:15.950 DEBUG 28956 --- [http-nio-8080-exec-5] c.p.dao.BlogMapper.deleteBlogAndTag      : ==>  Preparing: delete from t_blog_tag where blog_id = ?
+2020-08-24 20:08:15.951 DEBUG 28956 --- [http-nio-8080-exec-5] c.p.dao.BlogMapper.deleteBlogAndTag      : ==> Parameters: 8(Long)
+2020-08-24 20:08:15.969 DEBUG 28956 --- [http-nio-8080-exec-5] c.p.dao.BlogMapper.deleteBlogAndTag      : <==    Updates: 3
+2020-08-24 20:08:15.975 DEBUG 28956 --- [http-nio-8080-exec-5] c.p.dao.CommentMapper.findIdsByBlogId    : ==>  Preparing: select id from t_comment where blog_id=?
+2020-08-24 20:08:15.975 DEBUG 28956 --- [http-nio-8080-exec-5] c.p.dao.CommentMapper.findIdsByBlogId    : ==> Parameters: 8(Long)
+2020-08-24 20:08:15.981 DEBUG 28956 --- [http-nio-8080-exec-5] c.p.dao.CommentMapper.findIdsByBlogId    : <==      Total: 0
+2020-08-24 20:08:15.982 DEBUG 28956 --- [http-nio-8080-exec-5] c.personblog.dao.BlogMapper.deleteBlog   : ==>  Preparing: delete from t_blog where id = ?
+2020-08-24 20:08:15.983 DEBUG 28956 --- [http-nio-8080-exec-5] c.personblog.dao.BlogMapper.deleteBlog   : ==> Parameters: 8(Long)
+2020-08-24 20:08:15.990 DEBUG 28956 --- [http-nio-8080-exec-5] c.personblog.dao.BlogMapper.deleteBlog   : <==    Updates: 1
+2020-08-24 20:08:16.037 DEBUG 28956 --- [http-nio-8080-exec-9] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-08-24 20:08:16.038 DEBUG 28956 --- [http-nio-8080-exec-9] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==> Parameters: 
+2020-08-24 20:08:16.039 DEBUG 28956 --- [http-nio-8080-exec-9] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : <==      Total: 1
+2020-08-24 20:08:16.040 DEBUG 28956 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getAllBlogQuery       : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-08-24 20:08:16.041 DEBUG 28956 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getAllBlogQuery       : ==> Parameters: 5(Integer)
+2020-08-24 20:08:16.044 DEBUG 28956 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getAllBlogQuery       : <==      Total: 5
+2020-08-24 20:08:16.045 DEBUG 28956 --- [http-nio-8080-exec-9] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: select id, name from t_type
+2020-08-24 20:08:16.046 DEBUG 28956 --- [http-nio-8080-exec-9] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 
+2020-08-24 20:08:16.047 DEBUG 28956 --- [http-nio-8080-exec-9] c.p.dao.TypeMapper.selectAllType         : <==      Total: 9
+2020-08-24 20:08:19.663 DEBUG 28956 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.deleteBlogAndTag      : ==>  Preparing: delete from t_blog_tag where blog_id = ?
+2020-08-24 20:08:19.663 DEBUG 28956 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.deleteBlogAndTag      : ==> Parameters: 7(Long)
+2020-08-24 20:08:19.664 DEBUG 28956 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.deleteBlogAndTag      : <==    Updates: 3
+2020-08-24 20:08:19.665 DEBUG 28956 --- [http-nio-8080-exec-2] c.p.dao.CommentMapper.findIdsByBlogId    : ==>  Preparing: select id from t_comment where blog_id=?
+2020-08-24 20:08:19.665 DEBUG 28956 --- [http-nio-8080-exec-2] c.p.dao.CommentMapper.findIdsByBlogId    : ==> Parameters: 7(Long)
+2020-08-24 20:08:19.666 DEBUG 28956 --- [http-nio-8080-exec-2] c.p.dao.CommentMapper.findIdsByBlogId    : <==      Total: 0
+2020-08-24 20:08:19.667 DEBUG 28956 --- [http-nio-8080-exec-2] c.personblog.dao.BlogMapper.deleteBlog   : ==>  Preparing: delete from t_blog where id = ?
+2020-08-24 20:08:19.668 DEBUG 28956 --- [http-nio-8080-exec-2] c.personblog.dao.BlogMapper.deleteBlog   : ==> Parameters: 7(Long)
+2020-08-24 20:08:19.676 DEBUG 28956 --- [http-nio-8080-exec-2] c.personblog.dao.BlogMapper.deleteBlog   : <==    Updates: 1
+2020-08-24 20:08:19.690 DEBUG 28956 --- [http-nio-8080-exec-1] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-08-24 20:08:19.690 DEBUG 28956 --- [http-nio-8080-exec-1] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==> Parameters: 
+2020-08-24 20:08:19.691 DEBUG 28956 --- [http-nio-8080-exec-1] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : <==      Total: 1
+2020-08-24 20:08:19.692 DEBUG 28956 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getAllBlogQuery       : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-08-24 20:08:19.693 DEBUG 28956 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getAllBlogQuery       : ==> Parameters: 5(Integer)
+2020-08-24 20:08:19.694 DEBUG 28956 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getAllBlogQuery       : <==      Total: 5
+2020-08-24 20:08:19.696 DEBUG 28956 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: select id, name from t_type
+2020-08-24 20:08:19.697 DEBUG 28956 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 
+2020-08-24 20:08:19.700 DEBUG 28956 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllType         : <==      Total: 9
+2020-08-24 20:12:22.757 ERROR 28956 --- [http-nio-8080-exec-9] c.p.handler.ControllerExceptionHandler   : Request URL: http://localhost:8080/admin/login, Exception : {}
+
+org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:213)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:422)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:367)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:110)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:59)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:395)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1234)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1016)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2020-08-24 20:12:22.758  WARN 28956 --- [http-nio-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-08-24 20:12:44.361 DEBUG 28956 --- [http-nio-8080-exec-1] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-08-24 20:12:44.361 DEBUG 28956 --- [http-nio-8080-exec-1] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==> Parameters: 
+2020-08-24 20:12:44.363 DEBUG 28956 --- [http-nio-8080-exec-1] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : <==      Total: 1
+2020-08-24 20:12:44.365 DEBUG 28956 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getAllBlogQuery       : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-08-24 20:12:44.366 DEBUG 28956 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getAllBlogQuery       : ==> Parameters: 5(Integer)
+2020-08-24 20:12:44.372 DEBUG 28956 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getAllBlogQuery       : <==      Total: 5
+2020-08-24 20:12:44.374 DEBUG 28956 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: select id, name from t_type
+2020-08-24 20:12:44.374 DEBUG 28956 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 
+2020-08-24 20:12:44.375 DEBUG 28956 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllType         : <==      Total: 9
+2020-08-24 20:12:57.480 DEBUG 28956 --- [http-nio-8080-exec-8] com.personblog.dao.UserMapper.login      : ==>  Preparing: select username, password from t_user where username=? and password=?;
+2020-08-24 20:12:57.480 DEBUG 28956 --- [http-nio-8080-exec-8] com.personblog.dao.UserMapper.login      : ==> Parameters: tml(String), 123(String)
+2020-08-24 20:12:57.482 DEBUG 28956 --- [http-nio-8080-exec-8] com.personblog.dao.UserMapper.login      : <==      Total: 1
+2020-08-24 20:13:06.429 DEBUG 28956 --- [http-nio-8080-exec-8] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-08-24 20:13:06.429 DEBUG 28956 --- [http-nio-8080-exec-8] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==> Parameters: 
+2020-08-24 20:13:06.430 DEBUG 28956 --- [http-nio-8080-exec-8] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : <==      Total: 1
+2020-08-24 20:13:06.431 DEBUG 28956 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getAllBlogQuery       : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-08-24 20:13:06.431 DEBUG 28956 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getAllBlogQuery       : ==> Parameters: 5(Integer)
+2020-08-24 20:13:06.433 DEBUG 28956 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getAllBlogQuery       : <==      Total: 5
+2020-08-24 20:13:06.435 DEBUG 28956 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: select id, name from t_type
+2020-08-24 20:13:06.435 DEBUG 28956 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 
+2020-08-24 20:13:06.436 DEBUG 28956 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllType         : <==      Total: 9
+2020-08-24 20:13:56.142 DEBUG 28956 --- [http-nio-8080-exec-9] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-08-24 20:13:56.142 DEBUG 28956 --- [http-nio-8080-exec-9] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==> Parameters: 
+2020-08-24 20:13:56.143 DEBUG 28956 --- [http-nio-8080-exec-9] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : <==      Total: 1
+2020-08-24 20:13:56.144 DEBUG 28956 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getAllBlogQuery       : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-08-24 20:13:56.144 DEBUG 28956 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getAllBlogQuery       : ==> Parameters: 5(Integer)
+2020-08-24 20:13:56.146 DEBUG 28956 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getAllBlogQuery       : <==      Total: 5
+2020-08-24 20:13:56.147 DEBUG 28956 --- [http-nio-8080-exec-9] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: select id, name from t_type
+2020-08-24 20:13:56.147 DEBUG 28956 --- [http-nio-8080-exec-9] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 
+2020-08-24 20:13:56.148 DEBUG 28956 --- [http-nio-8080-exec-9] c.p.dao.TypeMapper.selectAllType         : <==      Total: 9
+2020-08-24 20:14:26.609  INFO 28956 --- [http-nio-8080-exec-10] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.index', args=[{}, 1]}
+2020-08-24 20:14:26.615 DEBUG 28956 --- [http-nio-8080-exec-10] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE published = true AND b.type_id = t.id AND b.user_id = u.id
+2020-08-24 20:14:26.616 DEBUG 28956 --- [http-nio-8080-exec-10] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==> Parameters: 
+2020-08-24 20:14:26.617 DEBUG 28956 --- [http-nio-8080-exec-10] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : <==      Total: 1
+2020-08-24 20:14:26.619 DEBUG 28956 --- [http-nio-8080-exec-10] c.p.dao.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id, b.title, b.first_picture, b.views, b.comment_count, b.update_time, b.description, u.avatar, u.nickname, t.name from t_blog b, t_type t, t_user u where published = true and b.type_id = t.id and b.user_id = u.id order by update_time desc LIMIT ?
+2020-08-24 20:14:26.620 DEBUG 28956 --- [http-nio-8080-exec-10] c.p.dao.BlogMapper.getFirstPageBlog      : ==> Parameters: 4(Integer)
+2020-08-24 20:14:26.626 DEBUG 28956 --- [http-nio-8080-exec-10] c.p.dao.BlogMapper.getFirstPageBlog      : <==      Total: 4
+2020-08-24 20:14:26.627 DEBUG 28956 --- [http-nio-8080-exec-10] c.p.dao.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select id, title, first_picture, recommend from t_blog order by t_blog.update_time desc limit 4
+2020-08-24 20:14:26.627 DEBUG 28956 --- [http-nio-8080-exec-10] c.p.dao.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-08-24 20:14:26.628 DEBUG 28956 --- [http-nio-8080-exec-10] c.p.dao.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-08-24 20:14:26.629 DEBUG 28956 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where published = true and t.id = b.type_id
+2020-08-24 20:14:26.629 DEBUG 28956 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-08-24 20:14:26.631 DEBUG 28956 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-08-24 20:14:26.639 DEBUG 28956 --- [http-nio-8080-exec-10] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_tag t, t_blog b, t_blog_tag bt where published = true and t.id = bt.tag_id and b.id = bt.blog_id
+2020-08-24 20:14:26.639 DEBUG 28956 --- [http-nio-8080-exec-10] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-08-24 20:14:26.654 DEBUG 28956 --- [http-nio-8080-exec-10] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 7
+2020-08-24 20:14:26.655  INFO 28956 --- [http-nio-8080-exec-10] com.personblog.aspect.LogAspect          : Result : index
+2020-08-24 20:14:29.250  INFO 28956 --- [http-nio-8080-exec-9] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TypeShowController.typeShow', args=[{}, -1, 1]}
+2020-08-24 20:14:29.254 DEBUG 28956 --- [http-nio-8080-exec-9] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where published = true and t.id = b.type_id
+2020-08-24 20:14:29.255 DEBUG 28956 --- [http-nio-8080-exec-9] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-08-24 20:14:29.257 DEBUG 28956 --- [http-nio-8080-exec-9] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-08-24 20:14:29.258 DEBUG 28956 --- [http-nio-8080-exec-9] c.personblog.dao.BlogMapper.getByTypeId  : ==>  Preparing: select b.id,b.title,b.first_picture, b.views,b.update_time,b.description, b.comment_count, t.name , u.nickname, u.avatar from t_blog b, t_type t, t_user u where published = true and b.type_id = t.id and u.id = b.user_id and b.type_id = ? order by b.update_time desc
+2020-08-24 20:14:29.258 DEBUG 28956 --- [http-nio-8080-exec-9] c.personblog.dao.BlogMapper.getByTypeId  : ==> Parameters: 7(Long)
+2020-08-24 20:14:29.262 DEBUG 28956 --- [http-nio-8080-exec-9] c.personblog.dao.BlogMapper.getByTypeId  : <==      Total: 3
+2020-08-24 20:14:29.263  INFO 28956 --- [http-nio-8080-exec-9] com.personblog.aspect.LogAspect          : Result : types
+2020-08-24 20:14:30.307  INFO 28956 --- [http-nio-8080-exec-8] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TagShowController.tag', args=[1, -1, {}]}
+2020-08-24 20:14:30.312 DEBUG 28956 --- [http-nio-8080-exec-8] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_tag t, t_blog b, t_blog_tag bt where published = true and t.id = bt.tag_id and b.id = bt.blog_id
+2020-08-24 20:14:30.312 DEBUG 28956 --- [http-nio-8080-exec-8] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-08-24 20:14:30.314 DEBUG 28956 --- [http-nio-8080-exec-8] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 7
+2020-08-24 20:14:30.315 DEBUG 28956 --- [http-nio-8080-exec-8] c.personblog.dao.BlogMapper.getByTagId   : ==>  Preparing: select b.id, b.title, b.first_picture, b.views, b.update_time, b.description,b.comment_count, t.name, u.nickname,u.avatar from t_blog b, t_type t, t_user u , t_blog_tag tb, t_tag t1 where published = true and b.type_id = t.id and u.id = b.user_id and tb.blog_id = b.id and tb.tag_id = t1.id and t1.id = ? order by b.update_time desc
+2020-08-24 20:14:30.316 DEBUG 28956 --- [http-nio-8080-exec-8] c.personblog.dao.BlogMapper.getByTagId   : ==> Parameters: 1(Long)
+2020-08-24 20:14:30.318 DEBUG 28956 --- [http-nio-8080-exec-8] c.personblog.dao.BlogMapper.getByTagId   : <==      Total: 1
+2020-08-24 20:14:30.321  INFO 28956 --- [http-nio-8080-exec-8] com.personblog.aspect.LogAspect          : Result : tags
+2020-08-24 20:14:30.964  INFO 28956 --- [http-nio-8080-exec-6] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.ArchiveShowController.archive', args=[{}]}
+2020-08-24 20:14:30.973 DEBUG 28956 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.findGroupYear         : ==>  Preparing: select date_format(b.update_time,'%Y') as year from t_blog b group by year order by year desc
+2020-08-24 20:14:30.975 DEBUG 28956 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.findGroupYear         : ==> Parameters: 
+2020-08-24 20:14:30.984 DEBUG 28956 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.findGroupYear         : <==      Total: 1
+2020-08-24 20:14:30.987 DEBUG 28956 --- [http-nio-8080-exec-6] c.personblog.dao.BlogMapper.findByYear   : ==>  Preparing: select b.id,b.title,b.update_time,b.flag from t_blog b where date_format(b.update_time,'%Y')=? order by b.update_time
+2020-08-24 20:14:30.989 DEBUG 28956 --- [http-nio-8080-exec-6] c.personblog.dao.BlogMapper.findByYear   : ==> Parameters: 2020(String)
+2020-08-24 20:14:30.992 DEBUG 28956 --- [http-nio-8080-exec-6] c.personblog.dao.BlogMapper.findByYear   : <==      Total: 5
+2020-08-24 20:14:30.994 DEBUG 28956 --- [http-nio-8080-exec-6] com.personblog.dao.BlogMapper.count      : ==>  Preparing: select count(*) from t_blog
+2020-08-24 20:14:30.995 DEBUG 28956 --- [http-nio-8080-exec-6] com.personblog.dao.BlogMapper.count      : ==> Parameters: 
+2020-08-24 20:14:30.996 DEBUG 28956 --- [http-nio-8080-exec-6] com.personblog.dao.BlogMapper.count      : <==      Total: 1
+2020-08-24 20:14:30.998  INFO 28956 --- [http-nio-8080-exec-6] com.personblog.aspect.LogAspect          : Result : archives
+2020-08-24 20:14:31.655  INFO 28956 --- [http-nio-8080-exec-6] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.AboutShowController.about', args=[]}
+2020-08-24 20:14:31.659  INFO 28956 --- [http-nio-8080-exec-6] com.personblog.aspect.LogAspect          : Result : about

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.personblog.dao.TagMapper">
+    <!--新增标签-->
+    <insert id="insertTag" parameterType="com.personblog.entity.Tag">
+        insert into t_tag(name) values (#{name})
+    </insert>
+
+    <!--删除标签-->
+    <delete id="deleteTag" >
+        delete from t_tag where id = #{id}
+    </delete>
+
+    <!--修改标签-->
+    <update id="updateTag" parameterType="com.personblog.entity.Tag">
+        update t_tag set name = #{name} where id = #{id};
+    </update>
+
+    <!--根据id查询-->
+    <select id="selectTagById" resultType="com.personblog.entity.Tag">
+        select id, name from t_tag where id = #{id}
+    </select>
+
+    <!--根据name查询-->
+    <select id="selectTagByName" resultType="com.personblog.entity.Tag">
+        select id, name from t_tag where name = #{name}
+    </select>
+
+    <!--查询所有标签-->
+    <select id="selectAllTag" resultType="com.personblog.entity.Tag">
+        select id, name from t_tag
+    </select>
+
+    <resultMap id="tags" type="com.personblog.entity.Tag">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <collection property="blogs" ofType="com.personblog.entity.Blog">
+            <id property="id" column="bid"/>
+            <result property="title" column="title"/>
+        </collection>
+    </resultMap>
+
+    <!--首页标签-->
+    <select id="selectAllTagAndBlog" resultMap="tags">
+        select t.id, t.name, b.id bid,b.title
+        from t_tag t
+        left join t_blog_tag bt
+        on bt.tag_id = t.id
+        left join t_blog b
+        on bt.blog_id = b.id
+        where b.published = true order by b.update_time desc
+
+    </select>
+
+
+</mapper>

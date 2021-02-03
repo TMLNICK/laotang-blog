@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <title>我的故事</title>
+
+
+
+
+
+</head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+        body {
+            background-color: rgba(241,243,244,.7);
+        }
+        li {
+            list-style: none;
+        }
+        .hide {
+            display: block;
+        }
+        .m-text {
+            /*大小*/
+            font-size: 16px;
+            /*字间距*/
+            letter-spacing: 1px !important;
+            /*行间距*/
+            line-height: 1.8;
+
+            font-family: 楷体;
+        }
+
+
+
+        .my-content {
+            width: 90%;
+            margin: 30px auto;
+
+        }
+
+        .my-container {
+            width: 90%;
+
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .my-container .my-content_left {
+            float: left;
+            width: 35%;
+            height: 100%;
+        }
+        .my-content_left .saying {
+            width: 90%;
+            position: relative;
+            /*height: 100px;*/
+            padding: 15px;
+            background: url("./images/greek-vase.png") no-repeat 0 0;
+            margin: 20px auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+        }
+
+        .my-content_left .my_saying {
+            background: url("./images/geometric-leaves.png") no-repeat 0 0;
+        }
+        .my-content_left .saying .author {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        .my-container .my-content_right {
+            float: right;
+            margin-top: 20px;
+            width: 60%;
+            font-family: 楷体;
+            text-align: center;
+        }
+        .my-content_right .main_info p{
+            text-indent: 2em;
+            margin: 20px auto;
+        }
+        .my-content_right .hobby ul{
+            border-left: 4px #00B5AD solid;
+            text-align: left!important;
+
+        }
+        .my-content_right .hobby p {
+            text-indent: 0 !important;
+            margin-left: 20px;
+        }
+        .my-content_right .skill ul{
+            border-left: 4px #00B5AD solid;
+            text-align: left!important;
+        }
+        .my-content_right .skill p {
+            text-indent: 0 !important;
+            margin-left: 20px;
+        }
+        .my-container .my-content_right p {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.8;
+            text-align: justify;
+            text-indent: 2em;
+        }
+
+        .my-container .my-content_right img {
+            width: 300px;
+            height: 250px;
+            border-radius: 5px;
+
+        }
+        .mood_my-container p {
+
+            margin-left: 20px;
+            font-family: 楷体;
+            font-size: 18px;
+
+        }
+        ._mCS_1 .mCSB_scrollTools .mCSB_dragger_bar{
+            width:11px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("body").mCustomScrollbar();
+        })
+    </script>
+<body data-mcs-theme="minimal-dark">
+    <!--导航-->
+    <nav th:replace="_fragments :: menu(6)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu">
+                <h2 class="ui teal header item">Blog</h2>
+                <a href="#" class=" m-item item m-mobile-hide"><i class="mini home icon"></i>首页</a>
+                <a href="#" class=" m-item item m-mobile-hide"><i class="mini idea icon"></i>分类</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="mini tags icon"></i>标签</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="mini clone icon"></i>归档</a>
+                <a href="#" class="active m-item item m-mobile-hide"><i class="mini info icon"></i>关于我</a>
+                <div class="right m-item item m-mobile-hide">
+                    <div class="ui icon inverted transparent input m-margin-tb-tiny">
+                        <input type="text" placeholder="Search....">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+<div class="my-content ">
+    <div class="my-container">
+        <div class="my-content_left  animated slideInLeft">
+            <div class="saying my_saying" style="text-align: center;">
+                <p> 我们的征途是星辰大海</p>
+                <p> 唯有热爱，能抵岁月漫长</p>
+                <p> 真正喜欢的人和事都值得我们坚持</p>
+                <p>  生活原本沉闷，但跑起来就有风</p>
+                <p>  保持热爱，奔赴山海 </p>
+                <div class="author">---TML</div>
+            </div>
+            <div class="saying m-text" >
+                <p>向着月亮出发，即使不能到达，也能站着群星之中</p>
+            </div>
+            <div class="saying m-text">
+                <p>人就这么一辈子，开心也是一天，不开心也是一天，所以你一定要开心</p>
+            </div>
+
+
+            <div class="saying m-text">
+                <p>走自己的路，为自己的梦想去奋斗</p>
+            </div>
+            <div class="saying m-text">
+                <p>凡是不能杀死你的，最终都会让你更强</p>
+            </div>
+
+            <div class="saying m-text">
+                <p>生活明朗，万物可爱，人间值得，未来可期</p>
+            </div>
+
+            <div class="saying m-text">
+                <p>去更远的地方，见更亮的光</p>
+            </div>
+        </div>
+        <div class="my-content_right  animated slideInRight ">
+            <img src="/images/bg5.jpg" alt="关于我">
+            <div class="main_info">
+                <p> 汤蒙良，江西人，大四在读，折腾在 0 和 1 的世界，喜欢Java，主攻后端，前端也略懂复制粘贴的精髓，网页审美水平有限！！！</p>
+            </div>
+
+            <div class="hobby">
+                <h3 style="font-weight: 400">爱好</h3>
+                <ul>
+                    <li><p>喜欢听歌(许嵩、毛不易）</p></li>
+                    <li><p>喜欢篮球(库里、杜兰特）</p></li>
+                    <li><p>喜欢写博客</p></li>
+                    <li><p>爱编程</p></li>
+                </ul>
+            </div>
+
+            <div class="skill">
+                <h3 style="font-weight: 400">技术栈</h3>
+                <ul>
+                    <li><p>后端：SSM+SpringBoot</p></li>
+                    <li><p>前端：HTML+CSS+Js+JQuery</p></li>
+                    <li><p>数据库：MySQL、Redis</p></li>
+                    <li><p>其他：Linux基础语法</p></li>
+                </ul>
+            </div>
+
+
+            </div>
+
+
+    </div>
+
+</div>
+
+<!--底部footer-->
+    <footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive"></footer>
+</body>
+</html>

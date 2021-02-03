@@ -1,0 +1,718 @@
+2020-11-09 22:21:10.303  INFO 24652 --- [restartedMain] com.personblog.PersonBlogApplication     : Starting PersonBlogApplication on DESKTOP-G613JOF with PID 24652 (E:\PersonBlog\target\classes started by 汤老 in E:\PersonBlog)
+2020-11-09 22:21:10.311 DEBUG 24652 --- [restartedMain] com.personblog.PersonBlogApplication     : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-11-09 22:21:10.311  INFO 24652 --- [restartedMain] com.personblog.PersonBlogApplication     : The following profiles are active: dev
+2020-11-09 22:21:10.388  INFO 24652 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-11-09 22:21:10.389  INFO 24652 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-11-09 22:21:13.303  INFO 24652 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-11-09 22:21:13.331  INFO 24652 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-11-09 22:21:13.331  INFO 24652 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-11-09 22:21:13.446  INFO 24652 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-11-09 22:21:13.447  INFO 24652 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3057 ms
+2020-11-09 22:21:14.426  INFO 24652 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-09 22:21:14.558  INFO 24652 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-11-09 22:21:15.221  INFO 24652 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-11-09 22:21:15.297  INFO 24652 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-09 22:21:15.310  INFO 24652 --- [restartedMain] com.personblog.PersonBlogApplication     : Started PersonBlogApplication in 5.899 seconds (JVM running for 7.465)
+2020-11-09 22:21:59.011  INFO 24652 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-09 22:21:59.011  INFO 24652 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-11-09 22:21:59.030  INFO 24652 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
+2020-11-09 22:21:59.090  INFO 24652 --- [http-nio-8080-exec-1] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.index', args=[{}, 1]}
+2020-11-09 22:21:59.116  INFO 24652 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-11-09 22:21:59.572  INFO 24652 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-11-09 22:21:59.746 DEBUG 24652 --- [http-nio-8080-exec-1] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id
+2020-11-09 22:21:59.776 DEBUG 24652 --- [http-nio-8080-exec-1] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==> Parameters: 
+2020-11-09 22:21:59.840 DEBUG 24652 --- [http-nio-8080-exec-1] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : <==      Total: 1
+2020-11-09 22:21:59.843 DEBUG 24652 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from t_blog b, t_type t,t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ?
+2020-11-09 22:21:59.845 DEBUG 24652 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getFirstPageBlog      : ==> Parameters: 4(Integer)
+2020-11-09 22:21:59.851 DEBUG 24652 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getFirstPageBlog      : <==      Total: 4
+2020-11-09 22:21:59.861 DEBUG 24652 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select id, title, recommend from t_blog b where b.recommend = true order by b.update_time desc limit 4
+2020-11-09 22:21:59.862 DEBUG 24652 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-11-09 22:21:59.863 DEBUG 24652 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getAllRecommendBlog   : <==      Total: 0
+2020-11-09 22:21:59.867 DEBUG 24652 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from t_type t left join t_blog b on t.id = b.type_id where b.published=true order by b.update_time desc
+2020-11-09 22:21:59.867 DEBUG 24652 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-11-09 22:21:59.867 DEBUG 24652 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-11-09 22:21:59.878 DEBUG 24652 --- [http-nio-8080-exec-1] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id, t.name, b.id bid,b.title from t_tag t left join t_blog_tag bt on bt.tag_id = t.id left join t_blog b on bt.blog_id = b.id where b.published = true order by b.update_time desc
+2020-11-09 22:21:59.878 DEBUG 24652 --- [http-nio-8080-exec-1] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-11-09 22:21:59.893 DEBUG 24652 --- [http-nio-8080-exec-1] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 5
+2020-11-09 22:21:59.898  INFO 24652 --- [http-nio-8080-exec-1] com.personblog.aspect.LogAspect          : Result : index
+2020-11-09 22:22:39.558  INFO 21020 --- [restartedMain] com.personblog.PersonBlogApplication     : Starting PersonBlogApplication on DESKTOP-G613JOF with PID 21020 (E:\PersonBlog\target\classes started by 汤老 in E:\PersonBlog)
+2020-11-09 22:22:39.562 DEBUG 21020 --- [restartedMain] com.personblog.PersonBlogApplication     : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-11-09 22:22:39.562  INFO 21020 --- [restartedMain] com.personblog.PersonBlogApplication     : The following profiles are active: dev
+2020-11-09 22:22:39.634  INFO 21020 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-11-09 22:22:39.634  INFO 21020 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-11-09 22:22:42.329  INFO 21020 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-11-09 22:22:42.346  INFO 21020 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-11-09 22:22:42.347  INFO 21020 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-11-09 22:22:42.515  INFO 21020 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-11-09 22:22:42.515  INFO 21020 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2881 ms
+2020-11-09 22:22:43.854  INFO 21020 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-09 22:22:44.102  INFO 21020 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-11-09 22:22:44.905  INFO 21020 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-11-09 22:22:44.972  INFO 21020 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-09 22:22:45.005  INFO 21020 --- [restartedMain] com.personblog.PersonBlogApplication     : Started PersonBlogApplication in 6.402 seconds (JVM running for 7.888)
+2020-11-09 22:23:15.915  INFO 21020 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-09 22:23:15.916  INFO 21020 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-11-09 22:23:15.951  INFO 21020 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 35 ms
+2020-11-09 22:23:16.014  INFO 21020 --- [http-nio-8080-exec-1] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.index', args=[{}, 1]}
+2020-11-09 22:23:16.041  INFO 21020 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-11-09 22:23:16.416  INFO 21020 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-11-09 22:23:16.723 DEBUG 21020 --- [http-nio-8080-exec-1] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id
+2020-11-09 22:23:16.761 DEBUG 21020 --- [http-nio-8080-exec-1] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==> Parameters: 
+2020-11-09 22:23:16.808 DEBUG 21020 --- [http-nio-8080-exec-1] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : <==      Total: 1
+2020-11-09 22:23:16.811 DEBUG 21020 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from t_blog b, t_type t,t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ?
+2020-11-09 22:23:16.811 DEBUG 21020 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getFirstPageBlog      : ==> Parameters: 4(Integer)
+2020-11-09 22:23:16.820 DEBUG 21020 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getFirstPageBlog      : <==      Total: 4
+2020-11-09 22:23:16.832 DEBUG 21020 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select id, title, recommend from t_blog b where b.recommend = true order by b.update_time desc limit 4
+2020-11-09 22:23:16.833 DEBUG 21020 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-11-09 22:23:16.836 DEBUG 21020 --- [http-nio-8080-exec-1] c.p.dao.BlogMapper.getAllRecommendBlog   : <==      Total: 0
+2020-11-09 22:23:16.850 DEBUG 21020 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from t_type t left join t_blog b on t.id = b.type_id where b.published=true order by b.update_time desc
+2020-11-09 22:23:16.850 DEBUG 21020 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-11-09 22:23:16.862 DEBUG 21020 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-11-09 22:23:16.877 DEBUG 21020 --- [http-nio-8080-exec-1] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id, t.name, b.id bid,b.title from t_tag t left join t_blog_tag bt on bt.tag_id = t.id left join t_blog b on bt.blog_id = b.id where b.published = true order by b.update_time desc
+2020-11-09 22:23:16.880 DEBUG 21020 --- [http-nio-8080-exec-1] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-11-09 22:23:16.890 DEBUG 21020 --- [http-nio-8080-exec-1] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 5
+2020-11-09 22:23:16.902  INFO 21020 --- [http-nio-8080-exec-1] com.personblog.aspect.LogAspect          : Result : index
+2020-11-09 22:23:23.407  INFO 21020 --- [http-nio-8080-exec-7] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.index', args=[{}, 1]}
+2020-11-09 22:23:23.414 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id
+2020-11-09 22:23:23.415 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==> Parameters: 
+2020-11-09 22:23:23.417 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : <==      Total: 1
+2020-11-09 22:23:23.418 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from t_blog b, t_type t,t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ?
+2020-11-09 22:23:23.420 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.getFirstPageBlog      : ==> Parameters: 4(Integer)
+2020-11-09 22:23:23.428 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.getFirstPageBlog      : <==      Total: 4
+2020-11-09 22:23:23.431 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select id, title, recommend from t_blog b where b.recommend = true order by b.update_time desc limit 4
+2020-11-09 22:23:23.431 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-11-09 22:23:23.433 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.getAllRecommendBlog   : <==      Total: 0
+2020-11-09 22:23:23.435 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from t_type t left join t_blog b on t.id = b.type_id where b.published=true order by b.update_time desc
+2020-11-09 22:23:23.436 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-11-09 22:23:23.438 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-11-09 22:23:23.442 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id, t.name, b.id bid,b.title from t_tag t left join t_blog_tag bt on bt.tag_id = t.id left join t_blog b on bt.blog_id = b.id where b.published = true order by b.update_time desc
+2020-11-09 22:23:23.443 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-11-09 22:23:23.445 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 5
+2020-11-09 22:23:23.464  INFO 21020 --- [http-nio-8080-exec-7] com.personblog.aspect.LogAspect          : Result : index
+2020-11-09 22:23:25.722  INFO 21020 --- [http-nio-8080-exec-5] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/blog/24', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.blog', args=[24, {}]}
+2020-11-09 22:23:25.725 DEBUG 21020 --- [http-nio-8080-exec-5] c.p.dao.BlogMapper.getDetailedBlog       : ==>  Preparing: select b.id bid,b.first_picture,b.flag,b.title,b.content,b.views, b.comment_count,b.update_time,b.commentabled,b.share_statement,b.appreciation, u.nickname,u.avatar, t.name from t_blog b, t_user u, t_type t where b.user_id = u.id and b.type_id = t.id and published = true and b.id = ?
+2020-11-09 22:23:25.726 DEBUG 21020 --- [http-nio-8080-exec-5] c.p.dao.BlogMapper.getDetailedBlog       : ==> Parameters: 24(Long)
+2020-11-09 22:23:25.734 DEBUG 21020 --- [http-nio-8080-exec-5] c.p.dao.BlogMapper.getDetailedBlog       : <==      Total: 1
+2020-11-09 22:23:25.835 DEBUG 21020 --- [http-nio-8080-exec-5] c.personblog.dao.BlogMapper.updateViews  : ==>  Preparing: update t_blog b set b.views = b.views + 1 where b.id = ?
+2020-11-09 22:23:25.835 DEBUG 21020 --- [http-nio-8080-exec-5] c.personblog.dao.BlogMapper.updateViews  : ==> Parameters: 24(Long)
+2020-11-09 22:23:25.851 DEBUG 21020 --- [http-nio-8080-exec-5] c.personblog.dao.BlogMapper.updateViews  : <==    Updates: 1
+2020-11-09 22:23:25.852 DEBUG 21020 --- [http-nio-8080-exec-5] c.p.dao.BlogMapper.getCommentCountById   : ==>  Preparing: update t_blog b set b.comment_count = ( select count(*) from t_comment c where c.blog_id = ? and b.id = ? ) WHERE b.id = ?
+2020-11-09 22:23:25.852 DEBUG 21020 --- [http-nio-8080-exec-5] c.p.dao.BlogMapper.getCommentCountById   : ==> Parameters: 24(Long), 24(Long), 24(Long)
+2020-11-09 22:23:25.864 DEBUG 21020 --- [http-nio-8080-exec-5] c.p.dao.BlogMapper.getCommentCountById   : <==    Updates: 1
+2020-11-09 22:23:25.888 DEBUG 21020 --- [http-nio-8080-exec-5] c.p.d.C.findByBlogIdParentIdNull         : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:23:25.891 DEBUG 21020 --- [http-nio-8080-exec-5] c.p.d.C.findByBlogIdParentIdNull         : ==> Parameters: 24(Long), -1(Long)
+2020-11-09 22:23:25.898 DEBUG 21020 --- [http-nio-8080-exec-5] c.p.d.C.findByBlogIdParentIdNull         : <==      Total: 0
+2020-11-09 22:23:25.901  INFO 21020 --- [http-nio-8080-exec-5] com.personblog.aspect.LogAspect          : Result : blog
+2020-11-09 22:23:26.871  INFO 21020 --- [http-nio-8080-exec-6] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/comments/24', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.CommentController.comments', args=[24, {}]}
+2020-11-09 22:23:26.892 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.d.C.findByBlogIdParentIdNull         : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:23:26.895 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.d.C.findByBlogIdParentIdNull         : ==> Parameters: 24(Long), -1(Long)
+2020-11-09 22:23:26.896 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.d.C.findByBlogIdParentIdNull         : <==      Total: 0
+2020-11-09 22:23:26.898  INFO 21020 --- [http-nio-8080-exec-6] com.personblog.aspect.LogAspect          : Result : blog :: commentList
+2020-11-09 22:23:31.312  INFO 21020 --- [http-nio-8080-exec-10] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TypeShowController.typeShow', args=[{}, -1, 1]}
+2020-11-09 22:23:31.327 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from t_type t left join t_blog b on t.id = b.type_id where b.published=true order by b.update_time desc
+2020-11-09 22:23:31.328 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-11-09 22:23:31.331 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-11-09 22:23:31.335 DEBUG 21020 --- [http-nio-8080-exec-10] c.personblog.dao.BlogMapper.getByTypeId  : ==>  Preparing: select b.id,b.title,b.flag,b.first_picture,b.published,b.views,b.update_time,b.description, t.id tid,t.name, b.comment_count, b.type_id, u.nickname, u.avatar from t_blog b join t_user u on b.user_id=u.id join t_type t on t.id=b.type_id and b.type_id = ? order by b.update_time desc
+2020-11-09 22:23:31.336 DEBUG 21020 --- [http-nio-8080-exec-10] c.personblog.dao.BlogMapper.getByTypeId  : ==> Parameters: 16(Long)
+2020-11-09 22:23:31.344 DEBUG 21020 --- [http-nio-8080-exec-10] c.personblog.dao.BlogMapper.getByTypeId  : <==      Total: 5
+2020-11-09 22:23:31.350  INFO 21020 --- [http-nio-8080-exec-10] com.personblog.aspect.LogAspect          : Result : types
+2020-11-09 22:23:33.181  INFO 21020 --- [http-nio-8080-exec-8] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.index', args=[{}, 1]}
+2020-11-09 22:23:33.190 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id
+2020-11-09 22:23:33.192 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==> Parameters: 
+2020-11-09 22:23:33.195 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : <==      Total: 1
+2020-11-09 22:23:33.195 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from t_blog b, t_type t,t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ?
+2020-11-09 22:23:33.195 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getFirstPageBlog      : ==> Parameters: 4(Integer)
+2020-11-09 22:23:33.210 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getFirstPageBlog      : <==      Total: 4
+2020-11-09 22:23:33.213 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select id, title, recommend from t_blog b where b.recommend = true order by b.update_time desc limit 4
+2020-11-09 22:23:33.213 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-11-09 22:23:33.215 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getAllRecommendBlog   : <==      Total: 0
+2020-11-09 22:23:33.218 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from t_type t left join t_blog b on t.id = b.type_id where b.published=true order by b.update_time desc
+2020-11-09 22:23:33.218 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-11-09 22:23:33.218 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-11-09 22:23:33.226 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id, t.name, b.id bid,b.title from t_tag t left join t_blog_tag bt on bt.tag_id = t.id left join t_blog b on bt.blog_id = b.id where b.published = true order by b.update_time desc
+2020-11-09 22:23:33.227 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-11-09 22:23:33.229 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 5
+2020-11-09 22:23:33.231  INFO 21020 --- [http-nio-8080-exec-8] com.personblog.aspect.LogAspect          : Result : index
+2020-11-09 22:23:59.241  INFO 21020 --- [http-nio-8080-exec-8] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TypeShowController.typeShow', args=[{}, -1, 1]}
+2020-11-09 22:23:59.244 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from t_type t left join t_blog b on t.id = b.type_id where b.published=true order by b.update_time desc
+2020-11-09 22:23:59.246 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-11-09 22:23:59.254 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-11-09 22:23:59.257 DEBUG 21020 --- [http-nio-8080-exec-8] c.personblog.dao.BlogMapper.getByTypeId  : ==>  Preparing: select b.id,b.title,b.flag,b.first_picture,b.published,b.views,b.update_time,b.description, t.id tid,t.name, b.comment_count, b.type_id, u.nickname, u.avatar from t_blog b join t_user u on b.user_id=u.id join t_type t on t.id=b.type_id and b.type_id = ? order by b.update_time desc
+2020-11-09 22:23:59.258 DEBUG 21020 --- [http-nio-8080-exec-8] c.personblog.dao.BlogMapper.getByTypeId  : ==> Parameters: 16(Long)
+2020-11-09 22:23:59.269 DEBUG 21020 --- [http-nio-8080-exec-8] c.personblog.dao.BlogMapper.getByTypeId  : <==      Total: 5
+2020-11-09 22:23:59.271  INFO 21020 --- [http-nio-8080-exec-8] com.personblog.aspect.LogAspect          : Result : types
+2020-11-09 22:24:04.414  INFO 21020 --- [http-nio-8080-exec-10] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TagShowController.tag', args=[1, -1, {}]}
+2020-11-09 22:24:04.428 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id, t.name, b.id bid,b.title from t_tag t left join t_blog_tag bt on bt.tag_id = t.id left join t_blog b on bt.blog_id = b.id where b.published = true order by b.update_time desc
+2020-11-09 22:24:04.429 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-11-09 22:24:04.429 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 5
+2020-11-09 22:24:04.435 DEBUG 21020 --- [http-nio-8080-exec-10] c.personblog.dao.BlogMapper.getByTagId   : ==>  Preparing: select b.id,b.title,b.first_picture,b.flag,b.views,b.update_time,b.description, t.id,t.name, u.nickname, u.avatar, b.comment_count from t_blog b, t_type t,t_blog_tag tb ,t_user u,t_tag tt where b.type_id = t.id and u.id = b.user_id and tb.blog_id = b.id and tb.tag_id = tt.id and tb.tag_id = ? order by b.update_time desc
+2020-11-09 22:24:04.435 DEBUG 21020 --- [http-nio-8080-exec-10] c.personblog.dao.BlogMapper.getByTagId   : ==> Parameters: 8(Long)
+2020-11-09 22:24:04.445 DEBUG 21020 --- [http-nio-8080-exec-10] c.personblog.dao.BlogMapper.getByTagId   : <==      Total: 5
+2020-11-09 22:24:04.447  INFO 21020 --- [http-nio-8080-exec-10] com.personblog.aspect.LogAspect          : Result : tags
+2020-11-09 22:24:08.286  INFO 21020 --- [http-nio-8080-exec-9] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.index', args=[{}, 1]}
+2020-11-09 22:24:08.300 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id
+2020-11-09 22:24:08.308 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==> Parameters: 
+2020-11-09 22:24:08.309 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : <==      Total: 1
+2020-11-09 22:24:08.310 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from t_blog b, t_type t,t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ?
+2020-11-09 22:24:08.312 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getFirstPageBlog      : ==> Parameters: 4(Integer)
+2020-11-09 22:24:08.317 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getFirstPageBlog      : <==      Total: 4
+2020-11-09 22:24:08.321 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select id, title, recommend from t_blog b where b.recommend = true order by b.update_time desc limit 4
+2020-11-09 22:24:08.321 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-11-09 22:24:08.323 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.dao.BlogMapper.getAllRecommendBlog   : <==      Total: 0
+2020-11-09 22:24:08.324 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from t_type t left join t_blog b on t.id = b.type_id where b.published=true order by b.update_time desc
+2020-11-09 22:24:08.325 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-11-09 22:24:08.326 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-11-09 22:24:08.331 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id, t.name, b.id bid,b.title from t_tag t left join t_blog_tag bt on bt.tag_id = t.id left join t_blog b on bt.blog_id = b.id where b.published = true order by b.update_time desc
+2020-11-09 22:24:08.331 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-11-09 22:24:08.335 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 5
+2020-11-09 22:24:08.337  INFO 21020 --- [http-nio-8080-exec-9] com.personblog.aspect.LogAspect          : Result : index
+2020-11-09 22:24:10.257  INFO 21020 --- [http-nio-8080-exec-1] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TypeShowController.typeShow', args=[{}, -1, 1]}
+2020-11-09 22:24:10.260 DEBUG 21020 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from t_type t left join t_blog b on t.id = b.type_id where b.published=true order by b.update_time desc
+2020-11-09 22:24:10.261 DEBUG 21020 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-11-09 22:24:10.265 DEBUG 21020 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-11-09 22:24:10.269 DEBUG 21020 --- [http-nio-8080-exec-1] c.personblog.dao.BlogMapper.getByTypeId  : ==>  Preparing: select b.id,b.title,b.flag,b.first_picture,b.published,b.views,b.update_time,b.description, t.id tid,t.name, b.comment_count, b.type_id, u.nickname, u.avatar from t_blog b join t_user u on b.user_id=u.id join t_type t on t.id=b.type_id and b.type_id = ? order by b.update_time desc
+2020-11-09 22:24:10.270 DEBUG 21020 --- [http-nio-8080-exec-1] c.personblog.dao.BlogMapper.getByTypeId  : ==> Parameters: 16(Long)
+2020-11-09 22:24:10.277 DEBUG 21020 --- [http-nio-8080-exec-1] c.personblog.dao.BlogMapper.getByTypeId  : <==      Total: 5
+2020-11-09 22:24:10.277  INFO 21020 --- [http-nio-8080-exec-1] com.personblog.aspect.LogAspect          : Result : types
+2020-11-09 22:24:12.196  INFO 21020 --- [http-nio-8080-exec-8] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.index', args=[{}, 1]}
+2020-11-09 22:24:12.203 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id
+2020-11-09 22:24:12.203 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==> Parameters: 
+2020-11-09 22:24:12.206 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : <==      Total: 1
+2020-11-09 22:24:12.207 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from t_blog b, t_type t,t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ?
+2020-11-09 22:24:12.207 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getFirstPageBlog      : ==> Parameters: 4(Integer)
+2020-11-09 22:24:12.214 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getFirstPageBlog      : <==      Total: 4
+2020-11-09 22:24:12.217 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select id, title, recommend from t_blog b where b.recommend = true order by b.update_time desc limit 4
+2020-11-09 22:24:12.217 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-11-09 22:24:12.220 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getAllRecommendBlog   : <==      Total: 0
+2020-11-09 22:24:12.221 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from t_type t left join t_blog b on t.id = b.type_id where b.published=true order by b.update_time desc
+2020-11-09 22:24:12.222 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-11-09 22:24:12.226 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-11-09 22:24:12.229 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id, t.name, b.id bid,b.title from t_tag t left join t_blog_tag bt on bt.tag_id = t.id left join t_blog b on bt.blog_id = b.id where b.published = true order by b.update_time desc
+2020-11-09 22:24:12.230 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-11-09 22:24:12.230 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 5
+2020-11-09 22:24:12.234  INFO 21020 --- [http-nio-8080-exec-8] com.personblog.aspect.LogAspect          : Result : index
+2020-11-09 22:24:18.043  INFO 21020 --- [http-nio-8080-exec-5] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/types/16', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TypeShowController.typeShow', args=[{}, 16, 1]}
+2020-11-09 22:24:18.044 DEBUG 21020 --- [http-nio-8080-exec-5] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from t_type t left join t_blog b on t.id = b.type_id where b.published=true order by b.update_time desc
+2020-11-09 22:24:18.046 DEBUG 21020 --- [http-nio-8080-exec-5] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-11-09 22:24:18.050 DEBUG 21020 --- [http-nio-8080-exec-5] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-11-09 22:24:18.053 DEBUG 21020 --- [http-nio-8080-exec-5] c.personblog.dao.BlogMapper.getByTypeId  : ==>  Preparing: select b.id,b.title,b.flag,b.first_picture,b.published,b.views,b.update_time,b.description, t.id tid,t.name, b.comment_count, b.type_id, u.nickname, u.avatar from t_blog b join t_user u on b.user_id=u.id join t_type t on t.id=b.type_id and b.type_id = ? order by b.update_time desc
+2020-11-09 22:24:18.054 DEBUG 21020 --- [http-nio-8080-exec-5] c.personblog.dao.BlogMapper.getByTypeId  : ==> Parameters: 16(Long)
+2020-11-09 22:24:18.059 DEBUG 21020 --- [http-nio-8080-exec-5] c.personblog.dao.BlogMapper.getByTypeId  : <==      Total: 5
+2020-11-09 22:24:18.061  INFO 21020 --- [http-nio-8080-exec-5] com.personblog.aspect.LogAspect          : Result : types
+2020-11-09 22:24:23.375  INFO 21020 --- [http-nio-8080-exec-2] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.index', args=[{}, 1]}
+2020-11-09 22:24:23.384 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id
+2020-11-09 22:24:23.385 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==> Parameters: 
+2020-11-09 22:24:23.386 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : <==      Total: 1
+2020-11-09 22:24:23.387 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from t_blog b, t_type t,t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ?
+2020-11-09 22:24:23.387 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.getFirstPageBlog      : ==> Parameters: 4(Integer)
+2020-11-09 22:24:23.394 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.getFirstPageBlog      : <==      Total: 4
+2020-11-09 22:24:23.396 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select id, title, recommend from t_blog b where b.recommend = true order by b.update_time desc limit 4
+2020-11-09 22:24:23.396 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-11-09 22:24:23.398 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.getAllRecommendBlog   : <==      Total: 0
+2020-11-09 22:24:23.401 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from t_type t left join t_blog b on t.id = b.type_id where b.published=true order by b.update_time desc
+2020-11-09 22:24:23.402 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-11-09 22:24:23.407 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-11-09 22:24:23.409 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id, t.name, b.id bid,b.title from t_tag t left join t_blog_tag bt on bt.tag_id = t.id left join t_blog b on bt.blog_id = b.id where b.published = true order by b.update_time desc
+2020-11-09 22:24:23.409 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-11-09 22:24:23.413 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 5
+2020-11-09 22:24:23.415  INFO 21020 --- [http-nio-8080-exec-2] com.personblog.aspect.LogAspect          : Result : index
+2020-11-09 22:24:26.227  INFO 21020 --- [http-nio-8080-exec-3] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TypeShowController.typeShow', args=[{}, -1, 1]}
+2020-11-09 22:24:26.229 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from t_type t left join t_blog b on t.id = b.type_id where b.published=true order by b.update_time desc
+2020-11-09 22:24:26.230 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-11-09 22:24:26.233 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-11-09 22:24:26.238 DEBUG 21020 --- [http-nio-8080-exec-3] c.personblog.dao.BlogMapper.getByTypeId  : ==>  Preparing: select b.id,b.title,b.flag,b.first_picture,b.published,b.views,b.update_time,b.description, t.id tid,t.name, b.comment_count, b.type_id, u.nickname, u.avatar from t_blog b join t_user u on b.user_id=u.id join t_type t on t.id=b.type_id and b.type_id = ? order by b.update_time desc
+2020-11-09 22:24:26.238 DEBUG 21020 --- [http-nio-8080-exec-3] c.personblog.dao.BlogMapper.getByTypeId  : ==> Parameters: 16(Long)
+2020-11-09 22:24:26.238 DEBUG 21020 --- [http-nio-8080-exec-3] c.personblog.dao.BlogMapper.getByTypeId  : <==      Total: 5
+2020-11-09 22:24:26.245  INFO 21020 --- [http-nio-8080-exec-3] com.personblog.aspect.LogAspect          : Result : types
+2020-11-09 22:25:02.842  INFO 21020 --- [http-nio-8080-exec-4] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.index', args=[{}, 1]}
+2020-11-09 22:25:02.851 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id
+2020-11-09 22:25:02.851 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==> Parameters: 
+2020-11-09 22:25:02.855 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : <==      Total: 1
+2020-11-09 22:25:02.855 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from t_blog b, t_type t,t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ?
+2020-11-09 22:25:02.855 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.BlogMapper.getFirstPageBlog      : ==> Parameters: 4(Integer)
+2020-11-09 22:25:02.860 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.BlogMapper.getFirstPageBlog      : <==      Total: 4
+2020-11-09 22:25:02.864 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select id, title, recommend from t_blog b where b.recommend = true order by b.update_time desc limit 4
+2020-11-09 22:25:02.864 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-11-09 22:25:02.866 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.BlogMapper.getAllRecommendBlog   : <==      Total: 0
+2020-11-09 22:25:02.869 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from t_type t left join t_blog b on t.id = b.type_id where b.published=true order by b.update_time desc
+2020-11-09 22:25:02.870 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-11-09 22:25:02.870 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-11-09 22:25:02.875 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id, t.name, b.id bid,b.title from t_tag t left join t_blog_tag bt on bt.tag_id = t.id left join t_blog b on bt.blog_id = b.id where b.published = true order by b.update_time desc
+2020-11-09 22:25:02.876 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-11-09 22:25:02.880 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 5
+2020-11-09 22:25:02.882  INFO 21020 --- [http-nio-8080-exec-4] com.personblog.aspect.LogAspect          : Result : index
+2020-11-09 22:25:08.178  INFO 21020 --- [http-nio-8080-exec-6] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TypeShowController.typeShow', args=[{}, -1, 1]}
+2020-11-09 22:25:08.180 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from t_type t left join t_blog b on t.id = b.type_id where b.published=true order by b.update_time desc
+2020-11-09 22:25:08.181 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-11-09 22:25:08.186 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-11-09 22:25:08.189 DEBUG 21020 --- [http-nio-8080-exec-6] c.personblog.dao.BlogMapper.getByTypeId  : ==>  Preparing: select b.id,b.title,b.flag,b.first_picture,b.published,b.views,b.update_time,b.description, t.id tid,t.name, b.comment_count, b.type_id, u.nickname, u.avatar from t_blog b join t_user u on b.user_id=u.id join t_type t on t.id=b.type_id and b.type_id = ? order by b.update_time desc
+2020-11-09 22:25:08.189 DEBUG 21020 --- [http-nio-8080-exec-6] c.personblog.dao.BlogMapper.getByTypeId  : ==> Parameters: 16(Long)
+2020-11-09 22:25:08.194 DEBUG 21020 --- [http-nio-8080-exec-6] c.personblog.dao.BlogMapper.getByTypeId  : <==      Total: 5
+2020-11-09 22:25:08.197  INFO 21020 --- [http-nio-8080-exec-6] com.personblog.aspect.LogAspect          : Result : types
+2020-11-09 22:25:13.769  INFO 21020 --- [http-nio-8080-exec-7] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TagShowController.tag', args=[1, -1, {}]}
+2020-11-09 22:25:13.771 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id, t.name, b.id bid,b.title from t_tag t left join t_blog_tag bt on bt.tag_id = t.id left join t_blog b on bt.blog_id = b.id where b.published = true order by b.update_time desc
+2020-11-09 22:25:13.772 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-11-09 22:25:13.775 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 5
+2020-11-09 22:25:13.779 DEBUG 21020 --- [http-nio-8080-exec-7] c.personblog.dao.BlogMapper.getByTagId   : ==>  Preparing: select b.id,b.title,b.first_picture,b.flag,b.views,b.update_time,b.description, t.id,t.name, u.nickname, u.avatar, b.comment_count from t_blog b, t_type t,t_blog_tag tb ,t_user u,t_tag tt where b.type_id = t.id and u.id = b.user_id and tb.blog_id = b.id and tb.tag_id = tt.id and tb.tag_id = ? order by b.update_time desc
+2020-11-09 22:25:13.779 DEBUG 21020 --- [http-nio-8080-exec-7] c.personblog.dao.BlogMapper.getByTagId   : ==> Parameters: 8(Long)
+2020-11-09 22:25:13.784 DEBUG 21020 --- [http-nio-8080-exec-7] c.personblog.dao.BlogMapper.getByTagId   : <==      Total: 5
+2020-11-09 22:25:13.787  INFO 21020 --- [http-nio-8080-exec-7] com.personblog.aspect.LogAspect          : Result : tags
+2020-11-09 22:25:23.347  INFO 21020 --- [http-nio-8080-exec-3] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TypeShowController.typeShow', args=[{}, -1, 1]}
+2020-11-09 22:25:23.349 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from t_type t left join t_blog b on t.id = b.type_id where b.published=true order by b.update_time desc
+2020-11-09 22:25:23.351 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-11-09 22:25:23.355 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-11-09 22:25:23.360 DEBUG 21020 --- [http-nio-8080-exec-3] c.personblog.dao.BlogMapper.getByTypeId  : ==>  Preparing: select b.id,b.title,b.flag,b.first_picture,b.published,b.views,b.update_time,b.description, t.id tid,t.name, b.comment_count, b.type_id, u.nickname, u.avatar from t_blog b join t_user u on b.user_id=u.id join t_type t on t.id=b.type_id and b.type_id = ? order by b.update_time desc
+2020-11-09 22:25:23.361 DEBUG 21020 --- [http-nio-8080-exec-3] c.personblog.dao.BlogMapper.getByTypeId  : ==> Parameters: 16(Long)
+2020-11-09 22:25:23.366 DEBUG 21020 --- [http-nio-8080-exec-3] c.personblog.dao.BlogMapper.getByTypeId  : <==      Total: 5
+2020-11-09 22:25:23.367  INFO 21020 --- [http-nio-8080-exec-3] com.personblog.aspect.LogAspect          : Result : types
+2020-11-09 22:25:24.930  INFO 21020 --- [http-nio-8080-exec-7] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TagShowController.tag', args=[1, -1, {}]}
+2020-11-09 22:25:24.932 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id, t.name, b.id bid,b.title from t_tag t left join t_blog_tag bt on bt.tag_id = t.id left join t_blog b on bt.blog_id = b.id where b.published = true order by b.update_time desc
+2020-11-09 22:25:24.933 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-11-09 22:25:24.936 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 5
+2020-11-09 22:25:24.940 DEBUG 21020 --- [http-nio-8080-exec-7] c.personblog.dao.BlogMapper.getByTagId   : ==>  Preparing: select b.id,b.title,b.first_picture,b.flag,b.views,b.update_time,b.description, t.id,t.name, u.nickname, u.avatar, b.comment_count from t_blog b, t_type t,t_blog_tag tb ,t_user u,t_tag tt where b.type_id = t.id and u.id = b.user_id and tb.blog_id = b.id and tb.tag_id = tt.id and tb.tag_id = ? order by b.update_time desc
+2020-11-09 22:25:24.940 DEBUG 21020 --- [http-nio-8080-exec-7] c.personblog.dao.BlogMapper.getByTagId   : ==> Parameters: 8(Long)
+2020-11-09 22:25:24.945 DEBUG 21020 --- [http-nio-8080-exec-7] c.personblog.dao.BlogMapper.getByTagId   : <==      Total: 5
+2020-11-09 22:25:24.948  INFO 21020 --- [http-nio-8080-exec-7] com.personblog.aspect.LogAspect          : Result : tags
+2020-11-09 22:25:27.451  INFO 21020 --- [http-nio-8080-exec-3] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TypeShowController.typeShow', args=[{}, -1, 1]}
+2020-11-09 22:25:27.453 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from t_type t left join t_blog b on t.id = b.type_id where b.published=true order by b.update_time desc
+2020-11-09 22:25:27.453 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-11-09 22:25:27.456 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-11-09 22:25:27.460 DEBUG 21020 --- [http-nio-8080-exec-3] c.personblog.dao.BlogMapper.getByTypeId  : ==>  Preparing: select b.id,b.title,b.flag,b.first_picture,b.published,b.views,b.update_time,b.description, t.id tid,t.name, b.comment_count, b.type_id, u.nickname, u.avatar from t_blog b join t_user u on b.user_id=u.id join t_type t on t.id=b.type_id and b.type_id = ? order by b.update_time desc
+2020-11-09 22:25:27.461 DEBUG 21020 --- [http-nio-8080-exec-3] c.personblog.dao.BlogMapper.getByTypeId  : ==> Parameters: 16(Long)
+2020-11-09 22:25:27.464 DEBUG 21020 --- [http-nio-8080-exec-3] c.personblog.dao.BlogMapper.getByTypeId  : <==      Total: 5
+2020-11-09 22:25:27.467  INFO 21020 --- [http-nio-8080-exec-3] com.personblog.aspect.LogAspect          : Result : types
+2020-11-09 22:25:35.267  INFO 21020 --- [http-nio-8080-exec-2] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TagShowController.tag', args=[1, -1, {}]}
+2020-11-09 22:25:35.269 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id, t.name, b.id bid,b.title from t_tag t left join t_blog_tag bt on bt.tag_id = t.id left join t_blog b on bt.blog_id = b.id where b.published = true order by b.update_time desc
+2020-11-09 22:25:35.271 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-11-09 22:25:35.277 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 5
+2020-11-09 22:25:35.279 DEBUG 21020 --- [http-nio-8080-exec-2] c.personblog.dao.BlogMapper.getByTagId   : ==>  Preparing: select b.id,b.title,b.first_picture,b.flag,b.views,b.update_time,b.description, t.id,t.name, u.nickname, u.avatar, b.comment_count from t_blog b, t_type t,t_blog_tag tb ,t_user u,t_tag tt where b.type_id = t.id and u.id = b.user_id and tb.blog_id = b.id and tb.tag_id = tt.id and tb.tag_id = ? order by b.update_time desc
+2020-11-09 22:25:35.280 DEBUG 21020 --- [http-nio-8080-exec-2] c.personblog.dao.BlogMapper.getByTagId   : ==> Parameters: 8(Long)
+2020-11-09 22:25:35.280 DEBUG 21020 --- [http-nio-8080-exec-2] c.personblog.dao.BlogMapper.getByTagId   : <==      Total: 5
+2020-11-09 22:25:35.286  INFO 21020 --- [http-nio-8080-exec-2] com.personblog.aspect.LogAspect          : Result : tags
+2020-11-09 22:25:37.156  INFO 21020 --- [http-nio-8080-exec-9] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TypeShowController.typeShow', args=[{}, -1, 1]}
+2020-11-09 22:25:37.158 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from t_type t left join t_blog b on t.id = b.type_id where b.published=true order by b.update_time desc
+2020-11-09 22:25:37.160 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-11-09 22:25:37.163 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-11-09 22:25:37.166 DEBUG 21020 --- [http-nio-8080-exec-9] c.personblog.dao.BlogMapper.getByTypeId  : ==>  Preparing: select b.id,b.title,b.flag,b.first_picture,b.published,b.views,b.update_time,b.description, t.id tid,t.name, b.comment_count, b.type_id, u.nickname, u.avatar from t_blog b join t_user u on b.user_id=u.id join t_type t on t.id=b.type_id and b.type_id = ? order by b.update_time desc
+2020-11-09 22:25:37.166 DEBUG 21020 --- [http-nio-8080-exec-9] c.personblog.dao.BlogMapper.getByTypeId  : ==> Parameters: 16(Long)
+2020-11-09 22:25:37.174 DEBUG 21020 --- [http-nio-8080-exec-9] c.personblog.dao.BlogMapper.getByTypeId  : <==      Total: 5
+2020-11-09 22:25:37.177  INFO 21020 --- [http-nio-8080-exec-9] com.personblog.aspect.LogAspect          : Result : types
+2020-11-09 22:25:40.455  INFO 21020 --- [http-nio-8080-exec-10] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TagShowController.tag', args=[1, -1, {}]}
+2020-11-09 22:25:40.456 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id, t.name, b.id bid,b.title from t_tag t left join t_blog_tag bt on bt.tag_id = t.id left join t_blog b on bt.blog_id = b.id where b.published = true order by b.update_time desc
+2020-11-09 22:25:40.457 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-11-09 22:25:40.459 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 5
+2020-11-09 22:25:40.462 DEBUG 21020 --- [http-nio-8080-exec-10] c.personblog.dao.BlogMapper.getByTagId   : ==>  Preparing: select b.id,b.title,b.first_picture,b.flag,b.views,b.update_time,b.description, t.id,t.name, u.nickname, u.avatar, b.comment_count from t_blog b, t_type t,t_blog_tag tb ,t_user u,t_tag tt where b.type_id = t.id and u.id = b.user_id and tb.blog_id = b.id and tb.tag_id = tt.id and tb.tag_id = ? order by b.update_time desc
+2020-11-09 22:25:40.462 DEBUG 21020 --- [http-nio-8080-exec-10] c.personblog.dao.BlogMapper.getByTagId   : ==> Parameters: 8(Long)
+2020-11-09 22:25:40.467 DEBUG 21020 --- [http-nio-8080-exec-10] c.personblog.dao.BlogMapper.getByTagId   : <==      Total: 5
+2020-11-09 22:25:40.467  INFO 21020 --- [http-nio-8080-exec-10] com.personblog.aspect.LogAspect          : Result : tags
+2020-11-09 22:25:41.327  INFO 21020 --- [http-nio-8080-exec-7] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.ArchiveShowController.archive', args=[{}]}
+2020-11-09 22:25:41.339 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.findGroupYear         : ==>  Preparing: select date_format(b.update_time,'%Y') year from t_blog b group by year order by year desc
+2020-11-09 22:25:41.341 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.findGroupYear         : ==> Parameters: 
+2020-11-09 22:25:41.357 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.findGroupYear         : <==      Total: 1
+2020-11-09 22:25:41.360 DEBUG 21020 --- [http-nio-8080-exec-7] c.personblog.dao.BlogMapper.findByYear   : ==>  Preparing: select b.id bid, b.title, b.update_time, b.flag from t_blog b where date_format(b.update_time,'%Y')=? order by b.update_time
+2020-11-09 22:25:41.362 DEBUG 21020 --- [http-nio-8080-exec-7] c.personblog.dao.BlogMapper.findByYear   : ==> Parameters: 2020(String)
+2020-11-09 22:25:41.366 DEBUG 21020 --- [http-nio-8080-exec-7] c.personblog.dao.BlogMapper.findByYear   : <==      Total: 5
+2020-11-09 22:25:41.369 DEBUG 21020 --- [http-nio-8080-exec-7] com.personblog.dao.BlogMapper.count      : ==>  Preparing: select count(*) from t_blog
+2020-11-09 22:25:41.370 DEBUG 21020 --- [http-nio-8080-exec-7] com.personblog.dao.BlogMapper.count      : ==> Parameters: 
+2020-11-09 22:25:41.371 DEBUG 21020 --- [http-nio-8080-exec-7] com.personblog.dao.BlogMapper.count      : <==      Total: 1
+2020-11-09 22:25:41.373  INFO 21020 --- [http-nio-8080-exec-7] com.personblog.aspect.LogAspect          : Result : archives
+2020-11-09 22:25:47.794  INFO 21020 --- [http-nio-8080-exec-8] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/blog/20', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.blog', args=[20, {}]}
+2020-11-09 22:25:47.798 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getDetailedBlog       : ==>  Preparing: select b.id bid,b.first_picture,b.flag,b.title,b.content,b.views, b.comment_count,b.update_time,b.commentabled,b.share_statement,b.appreciation, u.nickname,u.avatar, t.name from t_blog b, t_user u, t_type t where b.user_id = u.id and b.type_id = t.id and published = true and b.id = ?
+2020-11-09 22:25:47.799 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getDetailedBlog       : ==> Parameters: 20(Long)
+2020-11-09 22:25:47.803 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getDetailedBlog       : <==      Total: 1
+2020-11-09 22:25:47.827 DEBUG 21020 --- [http-nio-8080-exec-8] c.personblog.dao.BlogMapper.updateViews  : ==>  Preparing: update t_blog b set b.views = b.views + 1 where b.id = ?
+2020-11-09 22:25:47.828 DEBUG 21020 --- [http-nio-8080-exec-8] c.personblog.dao.BlogMapper.updateViews  : ==> Parameters: 20(Long)
+2020-11-09 22:25:47.830 DEBUG 21020 --- [http-nio-8080-exec-8] c.personblog.dao.BlogMapper.updateViews  : <==    Updates: 1
+2020-11-09 22:25:47.830 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getCommentCountById   : ==>  Preparing: update t_blog b set b.comment_count = ( select count(*) from t_comment c where c.blog_id = ? and b.id = ? ) WHERE b.id = ?
+2020-11-09 22:25:47.831 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getCommentCountById   : ==> Parameters: 20(Long), 20(Long), 20(Long)
+2020-11-09 22:25:47.833 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.getCommentCountById   : <==    Updates: 1
+2020-11-09 22:25:47.836 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdParentIdNull         : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:25:47.836 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdParentIdNull         : ==> Parameters: 20(Long), -1(Long)
+2020-11-09 22:25:47.839 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdParentIdNull         : <==      Total: 3
+2020-11-09 22:25:47.839 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdParentIdNotNull      : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:25:47.839 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdParentIdNotNull      : ==> Parameters: 20(Long), 8(Long)
+2020-11-09 22:25:47.839 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdParentIdNotNull      : <==      Total: 0
+2020-11-09 22:25:47.839 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdParentIdNotNull      : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:25:47.839 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdParentIdNotNull      : ==> Parameters: 20(Long), 5(Long)
+2020-11-09 22:25:47.846 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdParentIdNotNull      : <==      Total: 1
+2020-11-09 22:25:47.847 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdAndReplayId          : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:25:47.847 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdAndReplayId          : ==> Parameters: 20(Long), 7(Long)
+2020-11-09 22:25:47.847 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdAndReplayId          : <==      Total: 0
+2020-11-09 22:25:47.847 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdParentIdNotNull      : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:25:47.847 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdParentIdNotNull      : ==> Parameters: 20(Long), 1(Long)
+2020-11-09 22:25:47.847 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdParentIdNotNull      : <==      Total: 2
+2020-11-09 22:25:47.847 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdAndReplayId          : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:25:47.855 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdAndReplayId          : ==> Parameters: 20(Long), 3(Long)
+2020-11-09 22:25:47.856 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdAndReplayId          : <==      Total: 1
+2020-11-09 22:25:47.856 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdAndReplayId          : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:25:47.856 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdAndReplayId          : ==> Parameters: 20(Long), 4(Long)
+2020-11-09 22:25:47.859 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdAndReplayId          : <==      Total: 0
+2020-11-09 22:25:47.860 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdAndReplayId          : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:25:47.860 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdAndReplayId          : ==> Parameters: 20(Long), 2(Long)
+2020-11-09 22:25:47.861 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.d.C.findByBlogIdAndReplayId          : <==      Total: 0
+2020-11-09 22:25:47.861  INFO 21020 --- [http-nio-8080-exec-8] com.personblog.aspect.LogAspect          : Result : blog
+2020-11-09 22:25:48.709  INFO 21020 --- [http-nio-8080-exec-3] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/comments/20', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.CommentController.comments', args=[20, {}]}
+2020-11-09 22:25:48.710 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNull         : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:25:48.711 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNull         : ==> Parameters: 20(Long), -1(Long)
+2020-11-09 22:25:48.712 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNull         : <==      Total: 3
+2020-11-09 22:25:48.714 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNotNull      : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:25:48.716 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNotNull      : ==> Parameters: 20(Long), 8(Long)
+2020-11-09 22:25:48.717 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNotNull      : <==      Total: 0
+2020-11-09 22:25:48.718 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNotNull      : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:25:48.720 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNotNull      : ==> Parameters: 20(Long), 5(Long)
+2020-11-09 22:25:48.721 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNotNull      : <==      Total: 1
+2020-11-09 22:25:48.729 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:25:48.730 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : ==> Parameters: 20(Long), 7(Long)
+2020-11-09 22:25:48.731 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : <==      Total: 0
+2020-11-09 22:25:48.731 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNotNull      : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:25:48.731 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNotNull      : ==> Parameters: 20(Long), 1(Long)
+2020-11-09 22:25:48.735 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNotNull      : <==      Total: 2
+2020-11-09 22:25:48.736 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:25:48.736 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : ==> Parameters: 20(Long), 3(Long)
+2020-11-09 22:25:48.739 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : <==      Total: 1
+2020-11-09 22:25:48.741 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:25:48.743 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : ==> Parameters: 20(Long), 4(Long)
+2020-11-09 22:25:48.744 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : <==      Total: 0
+2020-11-09 22:25:48.745 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:25:48.746 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : ==> Parameters: 20(Long), 2(Long)
+2020-11-09 22:25:48.747 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : <==      Total: 0
+2020-11-09 22:25:48.747  INFO 21020 --- [http-nio-8080-exec-3] com.personblog.aspect.LogAspect          : Result : blog :: commentList
+2020-11-09 22:26:32.876  INFO 21020 --- [http-nio-8080-exec-5] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.AboutShowController.about', args=[]}
+2020-11-09 22:26:32.888  INFO 21020 --- [http-nio-8080-exec-5] com.personblog.aspect.LogAspect          : Result : about
+2020-11-09 22:26:40.554  INFO 21020 --- [http-nio-8080-exec-6] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.ArchiveShowController.archive', args=[{}]}
+2020-11-09 22:26:40.556 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.findGroupYear         : ==>  Preparing: select date_format(b.update_time,'%Y') year from t_blog b group by year order by year desc
+2020-11-09 22:26:40.556 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.findGroupYear         : ==> Parameters: 
+2020-11-09 22:26:40.557 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.findGroupYear         : <==      Total: 1
+2020-11-09 22:26:40.558 DEBUG 21020 --- [http-nio-8080-exec-6] c.personblog.dao.BlogMapper.findByYear   : ==>  Preparing: select b.id bid, b.title, b.update_time, b.flag from t_blog b where date_format(b.update_time,'%Y')=? order by b.update_time
+2020-11-09 22:26:40.559 DEBUG 21020 --- [http-nio-8080-exec-6] c.personblog.dao.BlogMapper.findByYear   : ==> Parameters: 2020(String)
+2020-11-09 22:26:40.564 DEBUG 21020 --- [http-nio-8080-exec-6] c.personblog.dao.BlogMapper.findByYear   : <==      Total: 5
+2020-11-09 22:26:40.568 DEBUG 21020 --- [http-nio-8080-exec-6] com.personblog.dao.BlogMapper.count      : ==>  Preparing: select count(*) from t_blog
+2020-11-09 22:26:40.570 DEBUG 21020 --- [http-nio-8080-exec-6] com.personblog.dao.BlogMapper.count      : ==> Parameters: 
+2020-11-09 22:26:40.571 DEBUG 21020 --- [http-nio-8080-exec-6] com.personblog.dao.BlogMapper.count      : <==      Total: 1
+2020-11-09 22:26:40.572  INFO 21020 --- [http-nio-8080-exec-6] com.personblog.aspect.LogAspect          : Result : archives
+2020-11-09 22:26:43.154  INFO 21020 --- [http-nio-8080-exec-3] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/blog/20', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.blog', args=[20, {}]}
+2020-11-09 22:26:43.157 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.BlogMapper.getDetailedBlog       : ==>  Preparing: select b.id bid,b.first_picture,b.flag,b.title,b.content,b.views, b.comment_count,b.update_time,b.commentabled,b.share_statement,b.appreciation, u.nickname,u.avatar, t.name from t_blog b, t_user u, t_type t where b.user_id = u.id and b.type_id = t.id and published = true and b.id = ?
+2020-11-09 22:26:43.157 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.BlogMapper.getDetailedBlog       : ==> Parameters: 20(Long)
+2020-11-09 22:26:43.162 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.BlogMapper.getDetailedBlog       : <==      Total: 1
+2020-11-09 22:26:43.168 DEBUG 21020 --- [http-nio-8080-exec-3] c.personblog.dao.BlogMapper.updateViews  : ==>  Preparing: update t_blog b set b.views = b.views + 1 where b.id = ?
+2020-11-09 22:26:43.169 DEBUG 21020 --- [http-nio-8080-exec-3] c.personblog.dao.BlogMapper.updateViews  : ==> Parameters: 20(Long)
+2020-11-09 22:26:43.178 DEBUG 21020 --- [http-nio-8080-exec-3] c.personblog.dao.BlogMapper.updateViews  : <==    Updates: 1
+2020-11-09 22:26:43.179 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.BlogMapper.getCommentCountById   : ==>  Preparing: update t_blog b set b.comment_count = ( select count(*) from t_comment c where c.blog_id = ? and b.id = ? ) WHERE b.id = ?
+2020-11-09 22:26:43.179 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.BlogMapper.getCommentCountById   : ==> Parameters: 20(Long), 20(Long), 20(Long)
+2020-11-09 22:26:43.181 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.BlogMapper.getCommentCountById   : <==    Updates: 1
+2020-11-09 22:26:43.184 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNull         : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:26:43.184 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNull         : ==> Parameters: 20(Long), -1(Long)
+2020-11-09 22:26:43.186 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNull         : <==      Total: 3
+2020-11-09 22:26:43.186 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNotNull      : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:26:43.186 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNotNull      : ==> Parameters: 20(Long), 8(Long)
+2020-11-09 22:26:43.186 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNotNull      : <==      Total: 0
+2020-11-09 22:26:43.193 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNotNull      : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:26:43.193 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNotNull      : ==> Parameters: 20(Long), 5(Long)
+2020-11-09 22:26:43.195 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNotNull      : <==      Total: 1
+2020-11-09 22:26:43.196 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:26:43.196 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : ==> Parameters: 20(Long), 7(Long)
+2020-11-09 22:26:43.197 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : <==      Total: 0
+2020-11-09 22:26:43.197 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNotNull      : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:26:43.198 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNotNull      : ==> Parameters: 20(Long), 1(Long)
+2020-11-09 22:26:43.199 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdParentIdNotNull      : <==      Total: 2
+2020-11-09 22:26:43.200 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:26:43.200 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : ==> Parameters: 20(Long), 3(Long)
+2020-11-09 22:26:43.203 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : <==      Total: 1
+2020-11-09 22:26:43.203 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:26:43.203 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : ==> Parameters: 20(Long), 4(Long)
+2020-11-09 22:26:43.203 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : <==      Total: 0
+2020-11-09 22:26:43.203 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:26:43.203 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : ==> Parameters: 20(Long), 2(Long)
+2020-11-09 22:26:43.203 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.C.findByBlogIdAndReplayId          : <==      Total: 0
+2020-11-09 22:26:43.203  INFO 21020 --- [http-nio-8080-exec-3] com.personblog.aspect.LogAspect          : Result : blog
+2020-11-09 22:26:44.002  INFO 21020 --- [http-nio-8080-exec-9] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/comments/20', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.CommentController.comments', args=[20, {}]}
+2020-11-09 22:26:44.003 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdParentIdNull         : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:26:44.003 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdParentIdNull         : ==> Parameters: 20(Long), -1(Long)
+2020-11-09 22:26:44.006 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdParentIdNull         : <==      Total: 3
+2020-11-09 22:26:44.008 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdParentIdNotNull      : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:26:44.009 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdParentIdNotNull      : ==> Parameters: 20(Long), 8(Long)
+2020-11-09 22:26:44.012 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdParentIdNotNull      : <==      Total: 0
+2020-11-09 22:26:44.013 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdParentIdNotNull      : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:26:44.014 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdParentIdNotNull      : ==> Parameters: 20(Long), 5(Long)
+2020-11-09 22:26:44.015 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdParentIdNotNull      : <==      Total: 1
+2020-11-09 22:26:44.016 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdAndReplayId          : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:26:44.016 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdAndReplayId          : ==> Parameters: 20(Long), 7(Long)
+2020-11-09 22:26:44.018 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdAndReplayId          : <==      Total: 0
+2020-11-09 22:26:44.018 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdParentIdNotNull      : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:26:44.019 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdParentIdNotNull      : ==> Parameters: 20(Long), 1(Long)
+2020-11-09 22:26:44.019 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdParentIdNotNull      : <==      Total: 2
+2020-11-09 22:26:44.019 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdAndReplayId          : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:26:44.019 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdAndReplayId          : ==> Parameters: 20(Long), 3(Long)
+2020-11-09 22:26:44.019 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdAndReplayId          : <==      Total: 1
+2020-11-09 22:26:44.019 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdAndReplayId          : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:26:44.019 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdAndReplayId          : ==> Parameters: 20(Long), 4(Long)
+2020-11-09 22:26:44.019 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdAndReplayId          : <==      Total: 0
+2020-11-09 22:26:44.027 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdAndReplayId          : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2020-11-09 22:26:44.028 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdAndReplayId          : ==> Parameters: 20(Long), 2(Long)
+2020-11-09 22:26:44.030 DEBUG 21020 --- [http-nio-8080-exec-9] c.p.d.C.findByBlogIdAndReplayId          : <==      Total: 0
+2020-11-09 22:26:44.032  INFO 21020 --- [http-nio-8080-exec-9] com.personblog.aspect.LogAspect          : Result : blog :: commentList
+2020-11-09 22:27:24.050  INFO 21020 --- [http-nio-8080-exec-2] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TagShowController.tag', args=[1, -1, {}]}
+2020-11-09 22:27:24.052 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id, t.name, b.id bid,b.title from t_tag t left join t_blog_tag bt on bt.tag_id = t.id left join t_blog b on bt.blog_id = b.id where b.published = true order by b.update_time desc
+2020-11-09 22:27:24.052 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-11-09 22:27:24.054 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 5
+2020-11-09 22:27:24.057 DEBUG 21020 --- [http-nio-8080-exec-2] c.personblog.dao.BlogMapper.getByTagId   : ==>  Preparing: select b.id,b.title,b.first_picture,b.flag,b.views,b.update_time,b.description, t.id,t.name, u.nickname, u.avatar, b.comment_count from t_blog b, t_type t,t_blog_tag tb ,t_user u,t_tag tt where b.type_id = t.id and u.id = b.user_id and tb.blog_id = b.id and tb.tag_id = tt.id and tb.tag_id = ? order by b.update_time desc
+2020-11-09 22:27:24.057 DEBUG 21020 --- [http-nio-8080-exec-2] c.personblog.dao.BlogMapper.getByTagId   : ==> Parameters: 8(Long)
+2020-11-09 22:27:24.062 DEBUG 21020 --- [http-nio-8080-exec-2] c.personblog.dao.BlogMapper.getByTagId   : <==      Total: 5
+2020-11-09 22:27:24.064  INFO 21020 --- [http-nio-8080-exec-2] com.personblog.aspect.LogAspect          : Result : tags
+2020-11-09 22:27:25.642  INFO 21020 --- [http-nio-8080-exec-4] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.AboutShowController.about', args=[]}
+2020-11-09 22:27:25.643  INFO 21020 --- [http-nio-8080-exec-4] com.personblog.aspect.LogAspect          : Result : about
+2020-11-09 22:27:26.580  INFO 21020 --- [http-nio-8080-exec-5] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.ArchiveShowController.archive', args=[{}]}
+2020-11-09 22:27:26.582 DEBUG 21020 --- [http-nio-8080-exec-5] c.p.dao.BlogMapper.findGroupYear         : ==>  Preparing: select date_format(b.update_time,'%Y') year from t_blog b group by year order by year desc
+2020-11-09 22:27:26.582 DEBUG 21020 --- [http-nio-8080-exec-5] c.p.dao.BlogMapper.findGroupYear         : ==> Parameters: 
+2020-11-09 22:27:26.583 DEBUG 21020 --- [http-nio-8080-exec-5] c.p.dao.BlogMapper.findGroupYear         : <==      Total: 1
+2020-11-09 22:27:26.585 DEBUG 21020 --- [http-nio-8080-exec-5] c.personblog.dao.BlogMapper.findByYear   : ==>  Preparing: select b.id bid, b.title, b.update_time, b.flag from t_blog b where date_format(b.update_time,'%Y')=? order by b.update_time
+2020-11-09 22:27:26.585 DEBUG 21020 --- [http-nio-8080-exec-5] c.personblog.dao.BlogMapper.findByYear   : ==> Parameters: 2020(String)
+2020-11-09 22:27:26.589 DEBUG 21020 --- [http-nio-8080-exec-5] c.personblog.dao.BlogMapper.findByYear   : <==      Total: 5
+2020-11-09 22:27:26.594 DEBUG 21020 --- [http-nio-8080-exec-5] com.personblog.dao.BlogMapper.count      : ==>  Preparing: select count(*) from t_blog
+2020-11-09 22:27:26.595 DEBUG 21020 --- [http-nio-8080-exec-5] com.personblog.dao.BlogMapper.count      : ==> Parameters: 
+2020-11-09 22:27:26.596 DEBUG 21020 --- [http-nio-8080-exec-5] com.personblog.dao.BlogMapper.count      : <==      Total: 1
+2020-11-09 22:27:26.597  INFO 21020 --- [http-nio-8080-exec-5] com.personblog.aspect.LogAspect          : Result : archives
+2020-11-09 22:27:27.801  INFO 21020 --- [http-nio-8080-exec-9] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.AboutShowController.about', args=[]}
+2020-11-09 22:27:27.801  INFO 21020 --- [http-nio-8080-exec-9] com.personblog.aspect.LogAspect          : Result : about
+2020-11-09 22:27:48.907  INFO 21020 --- [http-nio-8080-exec-6] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.index', args=[{}, 1]}
+2020-11-09 22:27:48.916 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id
+2020-11-09 22:27:48.917 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==> Parameters: 
+2020-11-09 22:27:48.920 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : <==      Total: 1
+2020-11-09 22:27:48.920 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from t_blog b, t_type t,t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ?
+2020-11-09 22:27:48.920 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.getFirstPageBlog      : ==> Parameters: 4(Integer)
+2020-11-09 22:27:48.926 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.getFirstPageBlog      : <==      Total: 4
+2020-11-09 22:27:48.927 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select id, title, recommend from t_blog b where b.recommend = true order by b.update_time desc limit 4
+2020-11-09 22:27:48.927 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-11-09 22:27:48.930 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.dao.BlogMapper.getAllRecommendBlog   : <==      Total: 0
+2020-11-09 22:27:48.931 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from t_type t left join t_blog b on t.id = b.type_id where b.published=true order by b.update_time desc
+2020-11-09 22:27:48.932 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-11-09 22:27:48.934 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-11-09 22:27:48.937 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id, t.name, b.id bid,b.title from t_tag t left join t_blog_tag bt on bt.tag_id = t.id left join t_blog b on bt.blog_id = b.id where b.published = true order by b.update_time desc
+2020-11-09 22:27:48.937 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-11-09 22:27:48.938 DEBUG 21020 --- [http-nio-8080-exec-6] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 5
+2020-11-09 22:27:48.940  INFO 21020 --- [http-nio-8080-exec-6] com.personblog.aspect.LogAspect          : Result : index
+2020-11-09 22:27:51.931  INFO 21020 --- [http-nio-8080-exec-1] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TypeShowController.typeShow', args=[{}, -1, 1]}
+2020-11-09 22:27:51.933 DEBUG 21020 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from t_type t left join t_blog b on t.id = b.type_id where b.published=true order by b.update_time desc
+2020-11-09 22:27:51.933 DEBUG 21020 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-11-09 22:27:51.934 DEBUG 21020 --- [http-nio-8080-exec-1] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-11-09 22:27:51.937 DEBUG 21020 --- [http-nio-8080-exec-1] c.personblog.dao.BlogMapper.getByTypeId  : ==>  Preparing: select b.id,b.title,b.flag,b.first_picture,b.published,b.views,b.update_time,b.description, t.id tid,t.name, b.comment_count, b.type_id, u.nickname, u.avatar from t_blog b join t_user u on b.user_id=u.id join t_type t on t.id=b.type_id and b.type_id = ? order by b.update_time desc
+2020-11-09 22:27:51.938 DEBUG 21020 --- [http-nio-8080-exec-1] c.personblog.dao.BlogMapper.getByTypeId  : ==> Parameters: 16(Long)
+2020-11-09 22:27:51.942 DEBUG 21020 --- [http-nio-8080-exec-1] c.personblog.dao.BlogMapper.getByTypeId  : <==      Total: 5
+2020-11-09 22:27:51.944  INFO 21020 --- [http-nio-8080-exec-1] com.personblog.aspect.LogAspect          : Result : types
+2020-11-09 22:27:53.565  INFO 21020 --- [http-nio-8080-exec-7] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TagShowController.tag', args=[1, -1, {}]}
+2020-11-09 22:27:53.568 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id, t.name, b.id bid,b.title from t_tag t left join t_blog_tag bt on bt.tag_id = t.id left join t_blog b on bt.blog_id = b.id where b.published = true order by b.update_time desc
+2020-11-09 22:27:53.568 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-11-09 22:27:53.572 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 5
+2020-11-09 22:27:53.576 DEBUG 21020 --- [http-nio-8080-exec-7] c.personblog.dao.BlogMapper.getByTagId   : ==>  Preparing: select b.id,b.title,b.first_picture,b.flag,b.views,b.update_time,b.description, t.id,t.name, u.nickname, u.avatar, b.comment_count from t_blog b, t_type t,t_blog_tag tb ,t_user u,t_tag tt where b.type_id = t.id and u.id = b.user_id and tb.blog_id = b.id and tb.tag_id = tt.id and tb.tag_id = ? order by b.update_time desc
+2020-11-09 22:27:53.576 DEBUG 21020 --- [http-nio-8080-exec-7] c.personblog.dao.BlogMapper.getByTagId   : ==> Parameters: 8(Long)
+2020-11-09 22:27:53.578 DEBUG 21020 --- [http-nio-8080-exec-7] c.personblog.dao.BlogMapper.getByTagId   : <==      Total: 5
+2020-11-09 22:27:53.583  INFO 21020 --- [http-nio-8080-exec-7] com.personblog.aspect.LogAspect          : Result : tags
+2020-11-09 22:27:54.670  INFO 21020 --- [http-nio-8080-exec-8] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.ArchiveShowController.archive', args=[{}]}
+2020-11-09 22:27:54.673 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.findGroupYear         : ==>  Preparing: select date_format(b.update_time,'%Y') year from t_blog b group by year order by year desc
+2020-11-09 22:27:54.674 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.findGroupYear         : ==> Parameters: 
+2020-11-09 22:27:54.676 DEBUG 21020 --- [http-nio-8080-exec-8] c.p.dao.BlogMapper.findGroupYear         : <==      Total: 1
+2020-11-09 22:27:54.677 DEBUG 21020 --- [http-nio-8080-exec-8] c.personblog.dao.BlogMapper.findByYear   : ==>  Preparing: select b.id bid, b.title, b.update_time, b.flag from t_blog b where date_format(b.update_time,'%Y')=? order by b.update_time
+2020-11-09 22:27:54.679 DEBUG 21020 --- [http-nio-8080-exec-8] c.personblog.dao.BlogMapper.findByYear   : ==> Parameters: 2020(String)
+2020-11-09 22:27:54.681 DEBUG 21020 --- [http-nio-8080-exec-8] c.personblog.dao.BlogMapper.findByYear   : <==      Total: 5
+2020-11-09 22:27:54.684 DEBUG 21020 --- [http-nio-8080-exec-8] com.personblog.dao.BlogMapper.count      : ==>  Preparing: select count(*) from t_blog
+2020-11-09 22:27:54.684 DEBUG 21020 --- [http-nio-8080-exec-8] com.personblog.dao.BlogMapper.count      : ==> Parameters: 
+2020-11-09 22:27:54.685 DEBUG 21020 --- [http-nio-8080-exec-8] com.personblog.dao.BlogMapper.count      : <==      Total: 1
+2020-11-09 22:27:54.685  INFO 21020 --- [http-nio-8080-exec-8] com.personblog.aspect.LogAspect          : Result : archives
+2020-11-09 22:27:55.701  INFO 21020 --- [http-nio-8080-exec-6] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.AboutShowController.about', args=[]}
+2020-11-09 22:27:55.701  INFO 21020 --- [http-nio-8080-exec-6] com.personblog.aspect.LogAspect          : Result : about
+2020-11-09 22:27:58.795  INFO 21020 --- [http-nio-8080-exec-2] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.index', args=[{}, 1]}
+2020-11-09 22:27:58.804 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id
+2020-11-09 22:27:58.804 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : ==> Parameters: 
+2020-11-09 22:27:58.806 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.d.BlogMapper.getFirstPageBlog_COUNT  : <==      Total: 1
+2020-11-09 22:27:58.806 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from t_blog b, t_type t,t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ?
+2020-11-09 22:27:58.807 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.getFirstPageBlog      : ==> Parameters: 4(Integer)
+2020-11-09 22:27:58.810 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.getFirstPageBlog      : <==      Total: 4
+2020-11-09 22:27:58.814 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select id, title, recommend from t_blog b where b.recommend = true order by b.update_time desc limit 4
+2020-11-09 22:27:58.814 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-11-09 22:27:58.815 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.BlogMapper.getAllRecommendBlog   : <==      Total: 0
+2020-11-09 22:27:58.818 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from t_type t left join t_blog b on t.id = b.type_id where b.published=true order by b.update_time desc
+2020-11-09 22:27:58.819 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-11-09 22:27:58.820 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-11-09 22:27:58.822 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id, t.name, b.id bid,b.title from t_tag t left join t_blog_tag bt on bt.tag_id = t.id left join t_blog b on bt.blog_id = b.id where b.published = true order by b.update_time desc
+2020-11-09 22:27:58.822 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-11-09 22:27:58.827 DEBUG 21020 --- [http-nio-8080-exec-2] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 5
+2020-11-09 22:27:58.830  INFO 21020 --- [http-nio-8080-exec-2] com.personblog.aspect.LogAspect          : Result : index
+2020-11-09 22:28:20.125  INFO 21020 --- [http-nio-8080-exec-7] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/search', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.search', args=[{}, 1, equals]}
+2020-11-09 22:28:20.198 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.getSearchBlog_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id AND b.published = true AND (b.title LIKE ? OR b.content LIKE ?)
+2020-11-09 22:28:20.198 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.getSearchBlog_COUNT   : ==> Parameters: %equals%(String), %equals%(String)
+2020-11-09 22:28:20.203 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.getSearchBlog_COUNT   : <==      Total: 1
+2020-11-09 22:28:20.204 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.getSearchBlog         : ==>  Preparing: select b.id,b.title,b.first_picture, b.views,b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from t_blog b, t_type t, t_user u where b.type_id = t.id and u.id = b.user_id and b.published = true and (b.title like ? or b.content like ?) order by b.update_time desc LIMIT ?
+2020-11-09 22:28:20.204 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.getSearchBlog         : ==> Parameters: %equals%(String), %equals%(String), 4(Integer)
+2020-11-09 22:28:20.204 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.getSearchBlog         : <==      Total: 1
+2020-11-09 22:28:20.208  INFO 21020 --- [http-nio-8080-exec-7] com.personblog.aspect.LogAspect          : Result : search
+2020-11-09 22:28:22.800  INFO 21020 --- [http-nio-8080-exec-7] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/search', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.IndexController.search', args=[{}, 1, equals]}
+2020-11-09 22:28:22.808 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.getSearchBlog_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id AND b.published = true AND (b.title LIKE ? OR b.content LIKE ?)
+2020-11-09 22:28:22.808 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.getSearchBlog_COUNT   : ==> Parameters: %equals%(String), %equals%(String)
+2020-11-09 22:28:22.810 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.getSearchBlog_COUNT   : <==      Total: 1
+2020-11-09 22:28:22.810 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.getSearchBlog         : ==>  Preparing: select b.id,b.title,b.first_picture, b.views,b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from t_blog b, t_type t, t_user u where b.type_id = t.id and u.id = b.user_id and b.published = true and (b.title like ? or b.content like ?) order by b.update_time desc LIMIT ?
+2020-11-09 22:28:22.810 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.getSearchBlog         : ==> Parameters: %equals%(String), %equals%(String), 4(Integer)
+2020-11-09 22:28:22.812 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.getSearchBlog         : <==      Total: 1
+2020-11-09 22:28:22.813  INFO 21020 --- [http-nio-8080-exec-7] com.personblog.aspect.LogAspect          : Result : search
+2020-11-09 22:29:05.210  INFO 21020 --- [http-nio-8080-exec-7] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TypeShowController.typeShow', args=[{}, -1, 1]}
+2020-11-09 22:29:05.212 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from t_type t left join t_blog b on t.id = b.type_id where b.published=true order by b.update_time desc
+2020-11-09 22:29:05.213 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectAllTypeAndBlog  : ==> Parameters: 
+2020-11-09 22:29:05.216 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectAllTypeAndBlog  : <==      Total: 5
+2020-11-09 22:29:05.220 DEBUG 21020 --- [http-nio-8080-exec-7] c.personblog.dao.BlogMapper.getByTypeId  : ==>  Preparing: select b.id,b.title,b.flag,b.first_picture,b.published,b.views,b.update_time,b.description, t.id tid,t.name, b.comment_count, b.type_id, u.nickname, u.avatar from t_blog b join t_user u on b.user_id=u.id join t_type t on t.id=b.type_id and b.type_id = ? order by b.update_time desc
+2020-11-09 22:29:05.221 DEBUG 21020 --- [http-nio-8080-exec-7] c.personblog.dao.BlogMapper.getByTypeId  : ==> Parameters: 16(Long)
+2020-11-09 22:29:05.224 DEBUG 21020 --- [http-nio-8080-exec-7] c.personblog.dao.BlogMapper.getByTypeId  : <==      Total: 5
+2020-11-09 22:29:05.227  INFO 21020 --- [http-nio-8080-exec-7] com.personblog.aspect.LogAspect          : Result : types
+2020-11-09 22:29:07.877  INFO 21020 --- [http-nio-8080-exec-5] com.personblog.aspect.LogAspect          : Request : {url='http://localhost:8080/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.personblog.controller.TagShowController.tag', args=[1, -1, {}]}
+2020-11-09 22:29:07.879 DEBUG 21020 --- [http-nio-8080-exec-5] c.p.dao.TagMapper.selectAllTagAndBlog    : ==>  Preparing: select t.id, t.name, b.id bid,b.title from t_tag t left join t_blog_tag bt on bt.tag_id = t.id left join t_blog b on bt.blog_id = b.id where b.published = true order by b.update_time desc
+2020-11-09 22:29:07.879 DEBUG 21020 --- [http-nio-8080-exec-5] c.p.dao.TagMapper.selectAllTagAndBlog    : ==> Parameters: 
+2020-11-09 22:29:07.882 DEBUG 21020 --- [http-nio-8080-exec-5] c.p.dao.TagMapper.selectAllTagAndBlog    : <==      Total: 5
+2020-11-09 22:29:07.886 DEBUG 21020 --- [http-nio-8080-exec-5] c.personblog.dao.BlogMapper.getByTagId   : ==>  Preparing: select b.id,b.title,b.first_picture,b.flag,b.views,b.update_time,b.description, t.id,t.name, u.nickname, u.avatar, b.comment_count from t_blog b, t_type t,t_blog_tag tb ,t_user u,t_tag tt where b.type_id = t.id and u.id = b.user_id and tb.blog_id = b.id and tb.tag_id = tt.id and tb.tag_id = ? order by b.update_time desc
+2020-11-09 22:29:07.887 DEBUG 21020 --- [http-nio-8080-exec-5] c.personblog.dao.BlogMapper.getByTagId   : ==> Parameters: 8(Long)
+2020-11-09 22:29:07.892 DEBUG 21020 --- [http-nio-8080-exec-5] c.personblog.dao.BlogMapper.getByTagId   : <==      Total: 5
+2020-11-09 22:29:07.894  INFO 21020 --- [http-nio-8080-exec-5] com.personblog.aspect.LogAspect          : Result : tags
+2020-11-09 22:29:54.035 DEBUG 21020 --- [http-nio-8080-exec-4] com.personblog.dao.UserMapper.login      : ==>  Preparing: select username, password from t_user where username=? and password=?;
+2020-11-09 22:29:54.035 DEBUG 21020 --- [http-nio-8080-exec-4] com.personblog.dao.UserMapper.login      : ==> Parameters: 17746629645(String), 123(String)
+2020-11-09 22:29:54.042 DEBUG 21020 --- [http-nio-8080-exec-4] com.personblog.dao.UserMapper.login      : <==      Total: 0
+2020-11-09 22:30:14.057 DEBUG 21020 --- [http-nio-8080-exec-8] com.personblog.dao.UserMapper.login      : ==>  Preparing: select username, password from t_user where username=? and password=?;
+2020-11-09 22:30:14.058 DEBUG 21020 --- [http-nio-8080-exec-8] com.personblog.dao.UserMapper.login      : ==> Parameters: tmlnick(String), 123(String)
+2020-11-09 22:30:14.059 DEBUG 21020 --- [http-nio-8080-exec-8] com.personblog.dao.UserMapper.login      : <==      Total: 0
+2020-11-09 22:30:59.159 DEBUG 21020 --- [http-nio-8080-exec-6] com.personblog.dao.UserMapper.login      : ==>  Preparing: select username, password from t_user where username=? and password=?;
+2020-11-09 22:30:59.161 DEBUG 21020 --- [http-nio-8080-exec-6] com.personblog.dao.UserMapper.login      : ==> Parameters: 17746629645(String), 123(String)
+2020-11-09 22:30:59.163 DEBUG 21020 --- [http-nio-8080-exec-6] com.personblog.dao.UserMapper.login      : <==      Total: 0
+2020-11-09 22:31:18.035 DEBUG 21020 --- [http-nio-8080-exec-2] com.personblog.dao.UserMapper.login      : ==>  Preparing: select username, password from t_user where username=? and password=?;
+2020-11-09 22:31:18.037 DEBUG 21020 --- [http-nio-8080-exec-2] com.personblog.dao.UserMapper.login      : ==> Parameters: tmlnick(String), tmlnick(String)
+2020-11-09 22:31:18.039 DEBUG 21020 --- [http-nio-8080-exec-2] com.personblog.dao.UserMapper.login      : <==      Total: 0
+2020-11-09 22:31:27.169 DEBUG 21020 --- [http-nio-8080-exec-5] com.personblog.dao.UserMapper.login      : ==>  Preparing: select username, password from t_user where username=? and password=?;
+2020-11-09 22:31:27.170 DEBUG 21020 --- [http-nio-8080-exec-5] com.personblog.dao.UserMapper.login      : ==> Parameters: tmlnick(String), 123(String)
+2020-11-09 22:31:27.172 DEBUG 21020 --- [http-nio-8080-exec-5] com.personblog.dao.UserMapper.login      : <==      Total: 0
+2020-11-09 22:31:41.328 DEBUG 21020 --- [http-nio-8080-exec-3] com.personblog.dao.UserMapper.login      : ==>  Preparing: select username, password from t_user where username=? and password=?;
+2020-11-09 22:31:41.329 DEBUG 21020 --- [http-nio-8080-exec-3] com.personblog.dao.UserMapper.login      : ==> Parameters: tml(String), 123(String)
+2020-11-09 22:31:41.333 DEBUG 21020 --- [http-nio-8080-exec-3] com.personblog.dao.UserMapper.login      : <==      Total: 1
+2020-11-09 22:32:15.631 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b LEFT JOIN t_type t ON b.type_id = t.id
+2020-11-09 22:32:15.632 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==> Parameters: 
+2020-11-09 22:32:15.633 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : <==      Total: 1
+2020-11-09 22:32:15.640 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.BlogMapper.getAllBlogQuery       : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM t_blog b LEFT JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-11-09 22:32:15.641 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.BlogMapper.getAllBlogQuery       : ==> Parameters: 5(Integer)
+2020-11-09 22:32:15.642 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.BlogMapper.getAllBlogQuery       : <==      Total: 5
+2020-11-09 22:32:15.647 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: select id, name from t_type
+2020-11-09 22:32:15.647 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 
+2020-11-09 22:32:15.648 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllType         : <==      Total: 6
+2020-11-09 22:32:19.466 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllType_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type
+2020-11-09 22:32:19.466 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllType_COUNT   : ==> Parameters: 
+2020-11-09 22:32:19.467 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllType_COUNT   : <==      Total: 1
+2020-11-09 22:32:19.469 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: SELECT id, name FROM t_type order by id desc LIMIT ?
+2020-11-09 22:32:19.470 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 5(Integer)
+2020-11-09 22:32:19.472 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllType         : <==      Total: 5
+2020-11-09 22:32:22.107 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TagMapper.selectAllTag_COUNT     : ==>  Preparing: SELECT count(0) FROM t_tag
+2020-11-09 22:32:22.108 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TagMapper.selectAllTag_COUNT     : ==> Parameters: 
+2020-11-09 22:32:22.109 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TagMapper.selectAllTag_COUNT     : <==      Total: 1
+2020-11-09 22:32:22.112 DEBUG 21020 --- [http-nio-8080-exec-10] c.personblog.dao.TagMapper.selectAllTag  : ==>  Preparing: SELECT id, name FROM t_tag order by id desc LIMIT ?
+2020-11-09 22:32:22.112 DEBUG 21020 --- [http-nio-8080-exec-10] c.personblog.dao.TagMapper.selectAllTag  : ==> Parameters: 5(Integer)
+2020-11-09 22:32:22.114 DEBUG 21020 --- [http-nio-8080-exec-10] c.personblog.dao.TagMapper.selectAllTag  : <==      Total: 5
+2020-11-09 22:32:26.488 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllType_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type
+2020-11-09 22:32:26.489 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllType_COUNT   : ==> Parameters: 
+2020-11-09 22:32:26.490 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllType_COUNT   : <==      Total: 1
+2020-11-09 22:32:26.491 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: SELECT id, name FROM t_type order by id desc LIMIT ?
+2020-11-09 22:32:26.492 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 5(Integer)
+2020-11-09 22:32:26.494 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllType         : <==      Total: 5
+2020-11-09 22:32:27.206 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b LEFT JOIN t_type t ON b.type_id = t.id
+2020-11-09 22:32:27.207 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==> Parameters: 
+2020-11-09 22:32:27.208 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : <==      Total: 1
+2020-11-09 22:32:27.209 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.BlogMapper.getAllBlogQuery       : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM t_blog b LEFT JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-11-09 22:32:27.209 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.BlogMapper.getAllBlogQuery       : ==> Parameters: 5(Integer)
+2020-11-09 22:32:27.215 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.BlogMapper.getAllBlogQuery       : <==      Total: 5
+2020-11-09 22:32:27.217 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: select id, name from t_type
+2020-11-09 22:32:27.218 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 
+2020-11-09 22:32:27.219 DEBUG 21020 --- [http-nio-8080-exec-10] c.p.dao.TypeMapper.selectAllType         : <==      Total: 6
+2020-11-09 22:32:28.245 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllType_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type
+2020-11-09 22:32:28.246 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllType_COUNT   : ==> Parameters: 
+2020-11-09 22:32:28.247 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllType_COUNT   : <==      Total: 1
+2020-11-09 22:32:28.249 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: SELECT id, name FROM t_type order by id desc LIMIT ?
+2020-11-09 22:32:28.249 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 5(Integer)
+2020-11-09 22:32:28.250 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllType         : <==      Total: 5
+2020-11-09 22:32:34.046 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TagMapper.selectAllTag_COUNT     : ==>  Preparing: SELECT count(0) FROM t_tag
+2020-11-09 22:32:34.046 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TagMapper.selectAllTag_COUNT     : ==> Parameters: 
+2020-11-09 22:32:34.047 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TagMapper.selectAllTag_COUNT     : <==      Total: 1
+2020-11-09 22:32:34.049 DEBUG 21020 --- [http-nio-8080-exec-3] c.personblog.dao.TagMapper.selectAllTag  : ==>  Preparing: SELECT id, name FROM t_tag order by id desc LIMIT ?
+2020-11-09 22:32:34.049 DEBUG 21020 --- [http-nio-8080-exec-3] c.personblog.dao.TagMapper.selectAllTag  : ==> Parameters: 5(Integer)
+2020-11-09 22:32:34.050 DEBUG 21020 --- [http-nio-8080-exec-3] c.personblog.dao.TagMapper.selectAllTag  : <==      Total: 5
+2020-11-09 22:32:35.025 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TagMapper.selectAllTag_COUNT     : ==>  Preparing: SELECT count(0) FROM t_tag
+2020-11-09 22:32:35.026 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TagMapper.selectAllTag_COUNT     : ==> Parameters: 
+2020-11-09 22:32:35.028 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TagMapper.selectAllTag_COUNT     : <==      Total: 1
+2020-11-09 22:32:35.030 DEBUG 21020 --- [http-nio-8080-exec-3] c.personblog.dao.TagMapper.selectAllTag  : ==>  Preparing: SELECT id, name FROM t_tag order by id desc LIMIT ?
+2020-11-09 22:32:35.030 DEBUG 21020 --- [http-nio-8080-exec-3] c.personblog.dao.TagMapper.selectAllTag  : ==> Parameters: 5(Integer)
+2020-11-09 22:32:35.032 DEBUG 21020 --- [http-nio-8080-exec-3] c.personblog.dao.TagMapper.selectAllTag  : <==      Total: 5
+2020-11-09 22:32:36.439 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllType_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type
+2020-11-09 22:32:36.440 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllType_COUNT   : ==> Parameters: 
+2020-11-09 22:32:36.442 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllType_COUNT   : <==      Total: 1
+2020-11-09 22:32:36.444 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: SELECT id, name FROM t_type order by id desc LIMIT ?
+2020-11-09 22:32:36.445 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 5(Integer)
+2020-11-09 22:32:36.445 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllType         : <==      Total: 5
+2020-11-09 22:32:37.886 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b LEFT JOIN t_type t ON b.type_id = t.id
+2020-11-09 22:32:37.886 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==> Parameters: 
+2020-11-09 22:32:37.887 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : <==      Total: 1
+2020-11-09 22:32:37.888 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.BlogMapper.getAllBlogQuery       : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM t_blog b LEFT JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-11-09 22:32:37.888 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.BlogMapper.getAllBlogQuery       : ==> Parameters: 5(Integer)
+2020-11-09 22:32:37.890 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.BlogMapper.getAllBlogQuery       : <==      Total: 5
+2020-11-09 22:32:37.891 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: select id, name from t_type
+2020-11-09 22:32:37.891 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 
+2020-11-09 22:32:37.892 DEBUG 21020 --- [http-nio-8080-exec-3] c.p.dao.TypeMapper.selectAllType         : <==      Total: 6
+2020-11-09 22:32:43.693 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type
+2020-11-09 22:32:43.694 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType_COUNT   : ==> Parameters: 
+2020-11-09 22:32:43.695 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType_COUNT   : <==      Total: 1
+2020-11-09 22:32:43.696 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: SELECT id, name FROM t_type order by id desc LIMIT ?
+2020-11-09 22:32:43.697 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 5(Integer)
+2020-11-09 22:32:43.699 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType         : <==      Total: 5
+2020-11-09 22:32:44.334 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TagMapper.selectAllTag_COUNT     : ==>  Preparing: SELECT count(0) FROM t_tag
+2020-11-09 22:32:44.335 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TagMapper.selectAllTag_COUNT     : ==> Parameters: 
+2020-11-09 22:32:44.336 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TagMapper.selectAllTag_COUNT     : <==      Total: 1
+2020-11-09 22:32:44.337 DEBUG 21020 --- [http-nio-8080-exec-4] c.personblog.dao.TagMapper.selectAllTag  : ==>  Preparing: SELECT id, name FROM t_tag order by id desc LIMIT ?
+2020-11-09 22:32:44.338 DEBUG 21020 --- [http-nio-8080-exec-4] c.personblog.dao.TagMapper.selectAllTag  : ==> Parameters: 5(Integer)
+2020-11-09 22:32:44.340 DEBUG 21020 --- [http-nio-8080-exec-4] c.personblog.dao.TagMapper.selectAllTag  : <==      Total: 5
+2020-11-09 22:32:46.594 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type
+2020-11-09 22:32:46.595 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType_COUNT   : ==> Parameters: 
+2020-11-09 22:32:46.596 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType_COUNT   : <==      Total: 1
+2020-11-09 22:32:46.598 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: SELECT id, name FROM t_type order by id desc LIMIT ?
+2020-11-09 22:32:46.599 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 5(Integer)
+2020-11-09 22:32:46.601 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType         : <==      Total: 5
+2020-11-09 22:32:48.048 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b LEFT JOIN t_type t ON b.type_id = t.id
+2020-11-09 22:32:48.049 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==> Parameters: 
+2020-11-09 22:32:48.050 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : <==      Total: 1
+2020-11-09 22:32:48.050 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.BlogMapper.getAllBlogQuery       : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM t_blog b LEFT JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-11-09 22:32:48.050 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.BlogMapper.getAllBlogQuery       : ==> Parameters: 5(Integer)
+2020-11-09 22:32:48.058 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.BlogMapper.getAllBlogQuery       : <==      Total: 5
+2020-11-09 22:32:48.060 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: select id, name from t_type
+2020-11-09 22:32:48.061 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 
+2020-11-09 22:32:48.062 DEBUG 21020 --- [http-nio-8080-exec-4] c.p.dao.TypeMapper.selectAllType         : <==      Total: 6
+2020-11-09 22:32:54.690 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectAllTag_COUNT     : ==>  Preparing: SELECT count(0) FROM t_tag
+2020-11-09 22:32:54.691 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectAllTag_COUNT     : ==> Parameters: 
+2020-11-09 22:32:54.692 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectAllTag_COUNT     : <==      Total: 1
+2020-11-09 22:32:54.694 DEBUG 21020 --- [http-nio-8080-exec-7] c.personblog.dao.TagMapper.selectAllTag  : ==>  Preparing: SELECT id, name FROM t_tag order by id desc LIMIT ?
+2020-11-09 22:32:54.695 DEBUG 21020 --- [http-nio-8080-exec-7] c.personblog.dao.TagMapper.selectAllTag  : ==> Parameters: 5(Integer)
+2020-11-09 22:32:54.696 DEBUG 21020 --- [http-nio-8080-exec-7] c.personblog.dao.TagMapper.selectAllTag  : <==      Total: 5
+2020-11-09 22:32:56.318 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectAllType_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type
+2020-11-09 22:32:56.318 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectAllType_COUNT   : ==> Parameters: 
+2020-11-09 22:32:56.319 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectAllType_COUNT   : <==      Total: 1
+2020-11-09 22:32:56.321 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: SELECT id, name FROM t_type order by id desc LIMIT ?
+2020-11-09 22:32:56.322 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 5(Integer)
+2020-11-09 22:32:56.323 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectAllType         : <==      Total: 5
+2020-11-09 22:32:58.018 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectAllTag_COUNT     : ==>  Preparing: SELECT count(0) FROM t_tag
+2020-11-09 22:32:58.019 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectAllTag_COUNT     : ==> Parameters: 
+2020-11-09 22:32:58.020 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TagMapper.selectAllTag_COUNT     : <==      Total: 1
+2020-11-09 22:32:58.021 DEBUG 21020 --- [http-nio-8080-exec-7] c.personblog.dao.TagMapper.selectAllTag  : ==>  Preparing: SELECT id, name FROM t_tag order by id desc LIMIT ?
+2020-11-09 22:32:58.021 DEBUG 21020 --- [http-nio-8080-exec-7] c.personblog.dao.TagMapper.selectAllTag  : ==> Parameters: 5(Integer)
+2020-11-09 22:32:58.022 DEBUG 21020 --- [http-nio-8080-exec-7] c.personblog.dao.TagMapper.selectAllTag  : <==      Total: 5
+2020-11-09 22:32:59.406 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectAllType_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type
+2020-11-09 22:32:59.407 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectAllType_COUNT   : ==> Parameters: 
+2020-11-09 22:32:59.408 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectAllType_COUNT   : <==      Total: 1
+2020-11-09 22:32:59.410 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: SELECT id, name FROM t_type order by id desc LIMIT ?
+2020-11-09 22:32:59.410 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 5(Integer)
+2020-11-09 22:32:59.411 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectAllType         : <==      Total: 5
+2020-11-09 22:33:01.618 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b LEFT JOIN t_type t ON b.type_id = t.id
+2020-11-09 22:33:01.618 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : ==> Parameters: 
+2020-11-09 22:33:01.620 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.d.BlogMapper.getAllBlogQuery_COUNT   : <==      Total: 1
+2020-11-09 22:33:01.623 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.getAllBlogQuery       : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM t_blog b LEFT JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-11-09 22:33:01.623 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.getAllBlogQuery       : ==> Parameters: 5(Integer)
+2020-11-09 22:33:01.626 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.BlogMapper.getAllBlogQuery       : <==      Total: 5
+2020-11-09 22:33:01.628 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectAllType         : ==>  Preparing: select id, name from t_type
+2020-11-09 22:33:01.630 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectAllType         : ==> Parameters: 
+2020-11-09 22:33:01.631 DEBUG 21020 --- [http-nio-8080-exec-7] c.p.dao.TypeMapper.selectAllType         : <==      Total: 6
